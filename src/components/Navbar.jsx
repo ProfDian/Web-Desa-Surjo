@@ -1,0 +1,10 @@
+//make a navbar without button link to just the home page
+import { Link } from "react-router-dom";
+
+export default function Navbar() {
+  return (
+    <nav>
+      <Link to="/">Home</Link>
+    </nav>
+  );
+}

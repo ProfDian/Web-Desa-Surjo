@@ -10,13 +10,13 @@ const slides = [
   },
   {
     id: 2,
-    image: "/src/assets/Pemandangan%20Surjo%20Images/pexels-pixabay-68507.jpg",
+    image: "pexels-pixabay-68507.jpg",
     title: "Tradisi dan Budaya",
     description: "Warisan leluhur yang terus dilestarikan dengan penuh cinta",
   },
   {
     id: 3,
-    image: "/src/assets/Pemandangan%20Surjo%20Images/pexels-pixabay-158063.jpg",
+    image: "pexels-pixabay-158063.jpg",
     title: "Potensi Wisata",
     description: "Destinasi wisata yang menawan dengan kearifan lokal",
   },

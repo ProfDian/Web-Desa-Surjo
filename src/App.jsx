@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import SejarahPage from "./sejarah_pages/SejarahPage";
+import SejarahDetailPage from "./sejarah_pages/SejarahDetailPage";
 import "./App.css";
 
 function App() {
@@ -17,10 +19,8 @@ function App() {
           <Route path="/about" element={<About />} />
 
           {/* Route untuk section-section spesifik */}
-          <Route
-            path="/sejarah"
-            element={<div>Halaman Sejarah (Coming Soon)</div>}
-          />
+          <Route path="/sejarah" element={<SejarahPage />} />
+          <Route path="/sejarah/:id" element={<SejarahDetailPage />} />
           <Route
             path="/potensi"
             element={<div>Halaman Potensi Desa (Coming Soon)</div>}

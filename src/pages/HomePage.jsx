@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { Target, Eye, CheckCircle, Users } from "lucide-react";
 import AboutSurjo from "../components/AboutSurjo";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   return (
@@ -196,9 +197,9 @@ const HomePage = () => {
                     Pelajari perjalanan panjang dan sejarah terbentuknya Desa
                     Surjo dari masa ke masa.
                   </p>
-                  <button className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
+                  <Link to="/sejarah" className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
                     Baca Selengkapnya →
-                  </button>
+                  </Link>
                 </div>
               </div>
 

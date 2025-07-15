@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import React, { useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const navigation = [
-  { name: "Beranda", href: "beranda" },
-  { name: "Tentang", href: "tentang" },
-  { name: "Sejarah", href: "sejarah" },
-  { name: "Potensi", href: "potensi" },
-  { name: "Budaya", href: "budaya" },
-  { name: "UMKM", href: "umkm" },
+  { name: "Beranda", href: "#beranda" },
+  { name: "Tentang", href: "#tentang" },
+  { name: "Sejarah", href: "#sejarah" },
+  { name: "Potensi", href: "#potensi" },
+  { name: "Budaya", href: "#budaya" },
+  { name: "UMKM", href: "#umkm" },
 ];
 
 export default function Header() {

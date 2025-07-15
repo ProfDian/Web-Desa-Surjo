@@ -137,7 +137,10 @@ const Footer = () => (
               </div>
               <div>
                 <p className="font-medium">Alamat</p>
-                <p className="text-sm">Jl. Raya Desa Surjo No. 123</p>
+                <p className="text-sm">
+                  Jalan Bawang-Limpung Km. 03 Kauman, Desa Surjo Kec. Bawang
+                  Kab. Batang 51274
+                </p>
               </div>
             </div>
 

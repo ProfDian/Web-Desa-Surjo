@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     id: 1,
-    image: "/pexels-francesco-ungaro-2325447.jpg",
+    image: "pexels-francesco-ungaro-2325447.jpg",
     title: "Keindahan Alam Desa Surjo",
     description:
       "Pemandangan yang memukau dengan hamparan hijau yang menenangkan",
@@ -22,7 +22,7 @@ const slides = [
   },
   {
     id: 4,
-    image: "/pexels-francesco-ungaro-2325447.jpg",
+    image: "teafarm.jpg",
     title: "Masyarakat Bersatu",
     description: "Komunitas yang solid dan penuh semangat gotong royong",
   },
@@ -34,7 +34,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 9000);
 
     return () => clearInterval(timer);
   }, []);

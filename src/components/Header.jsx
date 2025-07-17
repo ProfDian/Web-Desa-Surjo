@@ -3,9 +3,9 @@ import { Menu, X } from "lucide-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const navigation = [
-  { name: "Beranda", href: "#beranda" },
+  { name: "Home", href: "/" },
   { name: "Tentang", href: "#tentang" },
-  { name: "Sejarah", href: "#sejarah" },
+  { name: "Sejarah", href: "sejarah" },
   { name: "Potensi", href: "#potensi" },
   { name: "Budaya", href: "#budaya" },
   { name: "UMKM", href: "#umkm" },

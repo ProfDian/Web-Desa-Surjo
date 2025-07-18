@@ -6,9 +6,9 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "Tentang", href: "#tentang" },
   { name: "Sejarah", href: "sejarah" },
-  { name: "Potensi", href: "#potensi" },
-  { name: "Budaya", href: "#budaya" },
-  { name: "UMKM", href: "#umkm" },
+  { name: "Potensi", href: "potensi" },
+  { name: "Budaya", href: "budaya" },
+  { name: "UMKM", href: "umkm" },
 ];
 
 export default function Header() {
@@ -43,7 +43,7 @@ export default function Header() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold text-white hover:text-[#65724D] transition-colors"
+              className="text-sm/6 font-semibold text-[#90EE90] hover:text-[#65724D] transition-colors"
             >
               {item.name}
             </a>

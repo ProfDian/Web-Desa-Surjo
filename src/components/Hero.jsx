@@ -134,7 +134,7 @@ export default function Hero() {
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="#potensi"
+              href="potensi"
               className="bg-[#2A6218] hover:bg-[#1e4612] text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
               Jelajahi Desa

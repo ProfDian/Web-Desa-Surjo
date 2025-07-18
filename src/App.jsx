@@ -3,6 +3,9 @@ import HomePage from "./pages/HomePage";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Sejarah from "./pages/Sejarah";
+import UMKM from "./pages/UMKM";
+import Potensi from "./pages/Potensi";
+import Budaya from "./pages/Budaya";
 
 import "./App.css";
 
@@ -18,6 +21,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/sejarah" element={<Sejarah />} />
+          <Route path="/umkm" element={<UMKM />} />
+          <Route path="/potensi" element={<Potensi />} />
+          <Route path="/budaya" element={<Budaya />} />
 
           {/* Route untuk section-section spesifik */}
           <Route

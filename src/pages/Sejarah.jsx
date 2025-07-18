@@ -52,9 +52,21 @@ const Sejarah = () => {
             </div>
 
             <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-              Perjalanan panjang sebuah desa yang tumbuh dari masa ke masa,
-              mengukir cerita tentang kehidupan, budaya, dan perkembangan
-              masyarakat di lereng Pegunungan Dieng.
+              Desa Surjo, yang terletak di wilayah Kecamatan Bawang, Kabupaten
+              Batang, merupakan desa yang menyimpan jejak panjang sejarah
+              kolonialisme dan perdagangan di Jawa Tengah. Berdasarkan catatan
+              dan cerita masyarakat setempat, Surjo sejatinya adalah wilayah
+              penting di masa lalu bukan sekadar desa biasa, melainkan kawasan
+              yang seharusnya menjadi pusat pemerintahan kecamatan, bahkan
+              distrik. Pada masa kolonial Belanda, arsip-arsip lama menunjukkan
+              adanya Distrik Surjo, bukan Distrik Bawang. Bahkan hingga kini,
+              data sejarah resmi mengenai Distrik Bawang hampir tidak ditemukan,
+              sedangkan catatan tentang Distrik Surjo pernah ada. Hal ini
+              diperkuat oleh keberadaan pasar tradisional di Surjo yang sudah
+              berdiri sejak tahun 1884, menjadi pusat aktivitas ekonomi dan
+              titik kumpul masyarakat kala itu. Keberadaan pasar ini menandai
+              peran strategis Surjo sebagai pusat perdagangan dan pertemuan
+              antar bangsa, termasuk Belanda, Tionghoa, dan penduduk lokal.
             </p>
           </div>
         </div>
@@ -69,7 +81,7 @@ const Sejarah = () => {
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#2A6218] to-[#4A7C59] rounded-3xl opacity-20 blur-lg"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+                  src="https://dio-living.id/wp-content/uploads/2022/05/1566911962-keragaman-.jpg"
                   alt="Sejarah Awal Desa Surjo"
                   className="relative w-full h-64 lg:h-80 object-cover rounded-2xl shadow-2xl"
                 />
@@ -81,26 +93,38 @@ const Sejarah = () => {
                   </div>
                   <div>
                     <h2 className="text-3xl lg:text-4xl font-bold text-[#3F5231]">
-                      Awal Mula
+                      Pusat Perdagangan dan Jejak Kolonial
                     </h2>
                     <span className="text-[#2A6218] font-semibold">
-                      Abad ke-19
+                      Desa Surjo
                     </span>
                   </div>
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur.
+                  Pada era kolonial, Desa Surjo menjadi jalur dan tempat
+                  aktivitas para saudagar, termasuk pedagang dari etnis
+                  Tionghoa. Bahkan, jejak pemukiman dan pemakaman etnis Tionghoa
+                  masih dapat ditemukan di kawasan desa hingga saat ini. Bukti
+                  ini mempertegas peran Surjo sebagai salah satu sentra
+                  perdagangan dan lintas budaya di kawasan Batang.
                 </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et quasi architecto
-                  beatae vitae dicta sunt explicabo.
+                <p>
+                  Selain menjadi pusat ekonomi, Surjo juga pernah menjadi saksi
+                  peperangan antara pihak Belanda dan kelompok masyarakat
+                  Tionghoa, sebelum kemudian pecah konflik di masa pendudukan
+                  Jepang. Wilayah Pengempon, yang berdekatan dengan Surjo,
+                  menjadi titik kumpul pasukan, namun medan pertempuran utamanya
+                  justru terjadi di Desa Surjo. Ini menunjukkan betapa
+                  strategisnya posisi Surjo secara militer dan geografis pada
+                  masa itu.
+                </p>
+                <p>
+                  Keputusan kolonial untuk memindahkan pusat kecamatan ke
+                  Bawang, diyakini lebih karena letak Bawang yang berada di
+                  titik tengah wilayah administratif, bukan karena faktor
+                  sejarah atau kekuatan ekonomi. Namun, secara historis, Surjo
+                  lebih dulu menjadi pusat distrik dan titik ekonomi di kawasan
+                  ini.
                 </p>
               </div>
             </div>
@@ -117,22 +141,33 @@ const Sejarah = () => {
                       Budaya dan Tradisi
                     </h2>
                     <span className="text-[#2A6218] font-semibold">
-                      Abad ke-20
+                      Komoditas Kopi, Teh, dan Tradisi Minum
                     </span>
                   </div>
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos
-                  dolores et quas molestias excepturi sint occaecati cupiditate
-                  non provident, similique sunt in culpa qui officia deserunt
-                  mollitia animi.
+                  Seiring masuknya penjajah Belanda, kebiasaan minum kopi dan
+                  teh mulai membudaya di kalangan penduduk Surjo. Hal ini tidak
+                  terlepas dari kebiasaan para tuan tanah dan pengusaha
+                  perkebunan Belanda yang memperkenalkan kopi dan teh sebagai
+                  komoditas penting. Tanah di sekitar Surjo yang subur
+                  dimanfaatkan untuk budidaya tanaman tersebut. Hingga kini,
+                  tradisi minum kopi dan teh tetap hidup dan menjadi bagian dari
+                  identitas masyarakat Surjo, bahkan berkembang menjadi salah
+                  satu daya tarik wisata desa. Menurut catatan dari Sejarah Kopi
+                  Indonesia (Pusat Penelitian Kopi dan Kakao Indonesia),
+                  kebiasaan minum kopi di Indonesia memang berkembang pesat pada
+                  abad ke-19, seiring dengan dibukanya perkebunan kopi di
+                  wilayah Jawa oleh Belanda. Desa Surjo adalah bagian dari
+                  sejarah besar itu di lingkup lokal Batang.
                 </p>
                 <p className="text-gray-700 text-lg leading-relaxed">
-                  Et harum quidem rerum facilis est et expedita distinctio. Nam
-                  libero tempore, cum soluta nobis est eligendi optio cumque
-                  nihil impedit quo minus id quod maxime placeat facere
-                  possimus, omnis voluptas assumenda est.
+                  Sejarah Desa Surjo bukan hanya soal kisah lokal, tapi potret
+                  kecil dari cerita besar kolonialisme, perdagangan, dan
+                  kebudayaan di Indonesia. Sebagai desa dengan jejak kolonial
+                  Belanda, pengaruh peranakan Tionghoa, dan titik strategis
+                  dalam perekonomian kawasan, Surjo layak dikenang sebagai pusat
+                  sejarah dan budaya yang hidup hingga kini.
                 </p>
               </div>
               <div className="relative lg:order-2">

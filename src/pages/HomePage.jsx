@@ -3,8 +3,16 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { Target, Eye, CheckCircle, Users } from "lucide-react";
 import AboutSurjo from "../components/AboutSurjo";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
+
+  // Handler function untuk navigasi
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className="min-h-screen bg-[#F7F4ED]">
       <Header />
@@ -159,7 +167,7 @@ const HomePage = () => {
             </div>
           </section>
 
-          {/* Option Section */}
+          {/* Option Section - Updated */}
           <section className="mb-20">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-[#3F5231] mb-4">
@@ -172,7 +180,11 @@ const HomePage = () => {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+              {/* Sejarah Card */}
+              <div
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
+                onClick={() => handleNavigation("/sejarah")}
+              >
                 <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#3F5231] flex items-center justify-center">
                   <svg
                     className="w-16 h-16 text-white"
@@ -196,13 +208,17 @@ const HomePage = () => {
                     Pelajari perjalanan panjang dan sejarah terbentuknya Desa
                     Surjo dari masa ke masa.
                   </p>
-                  <button className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
+                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
                     Baca Selengkapnya →
-                  </button>
+                  </span>
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+              {/* Potensi Card */}
+              <div
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
+                onClick={() => handleNavigation("/potensi")}
+              >
                 <div className="h-48 bg-gradient-to-br from-[#2A6218] to-[#65724D] flex items-center justify-center">
                   <svg
                     className="w-16 h-16 text-white"
@@ -226,13 +242,17 @@ const HomePage = () => {
                     Temukan berbagai potensi unggulan yang dimiliki Desa Surjo
                     di berbagai sektor.
                   </p>
-                  <button className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
+                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
                     Jelajahi Potensi →
-                  </button>
+                  </span>
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+              {/* Budaya Card */}
+              <div
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
+                onClick={() => handleNavigation("/budaya")}
+              >
                 <div className="h-48 bg-gradient-to-br from-[#3F5231] to-[#2A6218] flex items-center justify-center">
                   <svg
                     className="w-16 h-16 text-white"
@@ -256,13 +276,17 @@ const HomePage = () => {
                     Mengenal tradisi, adat istiadat, dan kearifan lokal yang
                     masih dilestarikan.
                   </p>
-                  <button className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
+                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
                     Pelajari Budaya →
-                  </button>
+                  </span>
                 </div>
               </div>
 
-              <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group">
+              {/* UMKM Card */}
+              <div
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
+                onClick={() => handleNavigation("/umkm")}
+              >
                 <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#2A6218] flex items-center justify-center">
                   <svg
                     className="w-16 h-16 text-white"
@@ -286,9 +310,9 @@ const HomePage = () => {
                     Dukung usaha mikro, kecil, dan menengah yang berkembang di
                     desa kami.
                   </p>
-                  <button className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
+                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
                     Lihat UMKM →
-                  </button>
+                  </span>
                 </div>
               </div>
             </div>

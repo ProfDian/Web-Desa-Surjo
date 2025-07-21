@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     id: 1,
-    image: "pexels-francesco-ungaro-2325447.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg",
     title: "Keindahan Alam Desa Surjo",
     description:
       "Pemandangan yang memukau dengan hamparan hijau yang menenangkan",

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },

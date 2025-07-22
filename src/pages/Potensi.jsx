@@ -20,7 +20,7 @@ const Potensi = () => {
             Home
           </button>
           <span>/</span>
-          <span>Sejarah Surjo</span>
+          <span>Potensi Desa Surjo</span>
         </nav>
       </div>
 

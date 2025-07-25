@@ -14,7 +14,6 @@ const Footer = () => {
       title: "Alamat",
       content:
         "Jalan Bawang-Limpung Km. 03 Kauman, Desa Surjo Kec. Bawang Kab. Batang 51274",
-      link: "https://maps.app.goo.gl/KZ7ygQGg5Scu79b4Y",
     },
     {
       icon: Phone,

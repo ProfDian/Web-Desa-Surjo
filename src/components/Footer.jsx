@@ -3,7 +3,7 @@ import { Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
 const Footer = () => {
   const quickLinks = [
     { label: "Beranda", href: "#" },
-    { label: "Tentang Desa", href: "#" },
+    { label: "Budaya", href: "/budaya" },
     { label: "Berita", href: "#" },
     { label: "Layanan", href: "#" },
   ];

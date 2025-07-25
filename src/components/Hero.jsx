@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 const slides = [
   {
     id: 1,
-    image: "/pexels-francesco-ungaro-2325447.jpg",
+    image:
+      "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg",
     title: "Keindahan Alam Desa Surjo",
     description:
       "Pemandangan yang memukau dengan hamparan hijau yang menenangkan",
@@ -22,7 +23,7 @@ const slides = [
   },
   {
     id: 4,
-    image: "/pexels-francesco-ungaro-2325447.jpg",
+    image: "teafarm.jpg",
     title: "Masyarakat Bersatu",
     description: "Komunitas yang solid dan penuh semangat gotong royong",
   },
@@ -34,7 +35,7 @@ export default function Hero() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 9000);
 
     return () => clearInterval(timer);
   }, []);
@@ -134,7 +135,7 @@ export default function Hero() {
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="#potensi"
+              href="potensi"
               className="bg-[#2A6218] hover:bg-[#1e4612] text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
               Jelajahi Desa

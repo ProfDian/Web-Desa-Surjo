@@ -1,9 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import Home from "./pages/Home";
 import About from "./pages/About";
-import SejarahPage from "./sejarah_pages/SejarahPage";
-import SejarahDetailPage from "./sejarah_pages/SejarahDetailPage";
+import Sejarah from "./pages/Sejarah";
+import UMKM from "./pages/UMKM";
+import Potensi from "./pages/Potensi";
+import Budaya from "./pages/Budaya";
+
 import "./App.css";
 
 function App() {
@@ -15,8 +17,11 @@ function App() {
           <Route path="/" element={<HomePage />} />
 
           {/* Halaman-halaman lainnya */}
-          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/sejarah" element={<Sejarah />} />
+          <Route path="/umkm" element={<UMKM />} />
+          <Route path="/potensi" element={<Potensi />} />
+          <Route path="/budaya" element={<Budaya />} />
 
           {/* Route untuk section-section spesifik */}
           <Route path="/sejarah" element={<SejarahPage />} />

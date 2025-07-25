@@ -1,0 +1,98 @@
+[
+  {
+    "jenis": "Kopi",
+    "nama_umkm": "Kopi Surjo",
+    "pengantar_singkat": "Kopi Surjo merupakan usaha kopi milik Pak Gufron yang telah berjalan sejak tahun 2017/2018. Usaha ini menjual kopi dalam berbagai bentuk—bubuk, green bean, roastbean, hingga cherry—dengan jenis Robusta, Excelsa, dan Arabika. Bahan baku diambil dari kebun sendiri dan diolah menggunakan alat modern. Produk dijual dari rumah dan juga diekspor ke luar negeri.",
+    "pemilik": "Gufron",
+    "informasi_kontak": {
+      "wa": "0823-22 300 600",
+      "ig": "@kopisurjo_roaster"
+    },
+    "alamat": "Dusun Karangsari, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/BHjVfscMhEQS3YUd8",
+    "gallery": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428529/20250722_113747_hreftm.webp",
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428529/20250722_113438_oan9xf.webp"
+    ]
+  },
+  {
+    "jenis": "Kopi",
+    "nama_umkm": "CROSS",
+    "pengantar_singkat": "Kopi CROSS (Coffee Rokhim Special Surjo) milik Pak Burokhim menawarkan kopi Robusta dan Arabika dengan berbagai metode proses seperti Natural, Honey, Wine, dan Full Wash. Selain menjual kopi siap seduh, beliau juga menyediakan bibit kopi, sesuai dengan slogannya: \"Dari semai sampai seduh\". Kopi Wine Robusta-nya memiliki aroma pisang khas dari kebun yang dikelilingi tanaman pisang. Pak Burokhim aktif dalam komunitas kopi dan sering berbagi ilmu di pelatihan maupun kunjungan studi.",
+    "pemilik": "Burokhim",
+    "informasi_kontak": {
+      "wa": "0853-29 239 265",
+      "ig": "@anam_coffee",
+      "fb": "@Jaga Wana Coffee"
+    },
+    "alamat": "Dusun Karangsari, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/Wp9HGpB2CFzrAMn77",
+    "gallery": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428529/20250722_113918_jgs6gb.webp",
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428529/20250722_113918_jgs6gb.webp",
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428530/20250722_113929_ugbbhv.webp"
+    ]
+  },
+  {
+    "jenis": "Kopi",
+    "nama_umkm": "SBR",
+    "pengantar_singkat": "Pak Sobirin mulai merintis usaha kopinya sejak tahun 2019, dengan unggulan kopi Robusta proses honey yang memiliki rasa lebih ringan. Ciri khas produknya terletak pada tekstur bubuk yang sangat halus. Tersedia dalam kemasan 250 gram dan 70 gram, kopi SBR cocok dinikmati siapa saja—dari pecinta kopi lokal hingga penikmat harian.",
+    "pemilik": "Sobirin",
+    "informasi_kontak": {
+      "wa": "0857-56 123 943"
+    },
+    "alamat": "Dusun Karangsari, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/Ueai6EXD1Jm1XgZT7",
+    "gallery": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428533/IMG-20250720-WA0027_xfvq22.webp"
+    ]
+  },
+  {
+    "jenis": "Kopi",
+    "nama_umkm": "Rohman",
+    "pengantar_singkat": "UMKM kopi milik Pak Rohman menawarkan kopi robusta hasil panen dari kebun milik sendiri. Beliau melayani pemesanan kopi bagi siapa saja yang ingin menikmati cita rasa kopi lokal Desa Surjo.",
+    "pemilik": "Rohman",
+    "informasi_kontak": {
+      "wa": "0857-02 241 341"
+    },
+    "alamat": "Dusun Karangsari, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/Fj74biXbCm2gMwaj6",
+    "gallery": ["https://res.cloudinary.com/your-cloudinary-link8.jpg"]
+  },
+  {
+    "jenis": "Teh",
+    "nama_umkm": "Bu Sartuji",
+    "pengantar_singkat": "Usaha produksi teh oleh Bu Sartuji telah berjalan selama 10 tahun. Usaha ini menjual teh siap seduh yang melalui proses tradisional, dimana daun teh segar dipetik sendiri dari kebun teh milik pribadi. Tanpa tambahan bahan apapun, produk teh yang dihasilkan oleh Bu Sartuji mempertahankan cita rasa teh khas surjo.",
+    "pemilik": "Bu Sartuji",
+    "informasi_kontak": {
+      "wa": "0822-25 214 022 (Pak Hafid)"
+    },
+    "alamat": "Dusun Kuripan, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/37RwFPYpB6tCcc2w5",
+    "gallery": ["https://res.cloudinary.com/your-cloudinary-link9.jpg"]
+  },
+  {
+    "jenis": "Teh",
+    "nama_umkm": "Mbah Ginah",
+    "pengantar_singkat": "UMKM Teh Mbah Ginah merupakan salah satu pengolah teh kering di Desa Surjo. Proses pengeringan dan pengemasan dilakukan secara mandiri dalam skala rumahan. Meskipun sederhana, teh Mbah Ginah tetap diminati oleh warga sekitar karena aroma dan rasa yang sangat khas.",
+    "pemilik": "Bu Ginah",
+    "informasi_kontak": {
+      "wa": "0852-93 523 072 (Bu Khairunnisa)"
+    },
+    "alamat": "Dusun Kuripan, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/37RwFPYpB6tCcc2w5",
+    "gallery": ["https://res.cloudinary.com/your-cloudinary-link10.jpg"]
+  },
+  {
+    "jenis": "Emping",
+    "nama_umkm": "Ratu Emping",
+    "pengantar_singkat": "Ratu Emping adalah usaha emping rumahan yang sudah dijalankan sejak generasi Pak Wahyu. Produk emping ini dikenal karena kualitas rasanya dan sudah didistribusikan hingga ke Kalimantan dan Pontianak. Ratu Emping menawarkan beberapa varian rasa, sehingga cocok untuk camilan harian maupun oleh-oleh khas dari Desa Surjo.",
+    "pemilik": "Pak Eko Wahyu",
+    "informasi_kontak": {
+      "wa": "0823-22 367 678"
+    },
+    "alamat": "Gondangan, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
+    "link_maps": "https://maps.app.goo.gl/adPAWa3uJehWdJtS9",
+    "gallery": ["https://res.cloudinary.com/your-cloudinary-link10.jpg"]
+  }
+]

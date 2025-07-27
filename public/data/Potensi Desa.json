@@ -1,0 +1,40 @@
+{
+  "pengantar": "Desa Surjo memiliki kekayaan potensi yang mencerminkan perpaduan antara budaya lokal, komoditas unggulan hasil alam, serta potensi wisata yang terus dikembangkan. Potensi ini menjadi kekuatan utama dalam membangun desa mandiri, berdaya saing, dan menarik bagi wisatawan maupun mitra usaha.",
+  "komoditas_unggulan": [
+    {
+      "nama": "Teh",
+      "pengantar": "Teh Surjo tumbuh di ketinggian sekitar 1.200 mdpl, di lereng pegunungan dengan iklim sejuk dan tanah subur. Daunnya dipetik saat pagi hari, ketika masih segar dan berembun, hanya bagian pucuk dan dua daun muda teratas yang dipilih agar kualitas teh tetap unggul. Ciri khas teh surjo adalah rasanya ya sepat dan sensasi pahit segar dengan aroma alami.",
+      "proses": [
+        "Budidaya: tanaman dirawat dengan teknik organik dan pemangkasan berkala",
+        "Pemetikan: hanya pucuk daun terbaik yang dipanen",
+        "Pelayuan, Penggulungan, & Sangrai: untuk melembutkan, merangsang oksidasi, mengurangi kadar air, dan meningkatkan daya simpan. Pengeringan dan penggulungan masih dilakukan manual oleh para petani lokal menggunakan alat khusus bernama pengaron menjaga karakter rasa dan aroma alaminya. Pengaron diganti setiap lima bulan sekali.",
+        "Penyortiran & Pengemasan – siap didistribusikan ke cafe atau UMKM"
+      ],
+      "galeri": []
+    },
+    {
+      "nama": "Kopi Arabika",
+      "pengantar": "Kopi arabika dikenal karena cita rasa yang kompleks dan aromanya yang wangi. Meski paling diminati, produksi arabika hanya menyumbang sekitar 18% dari total kopi Indonesia—karena memang kopi ini tidak bisa tumbuh di sembarang tempat. Arabika membutuhkan ketinggian di atas 1.000 mdpl dan suhu 16–21°C. Oleh karena itu, hanya wilayah tertentu seperti lereng pegunungan Surjo yang cocok untuk budidayanya. Setelah panen, kopi arabika diproses melalui berbagai metode pascapanen seperti Natural (kering langsung), Red Honey (kulit dikupas sebagian), dan Full Washed (fermentasi dan pencucian). Masing-masing menghasilkan karakter rasa yang berbeda. Bahkan kulit buah kopi pun tidak dibuang, melainkan dijadikan pupuk organik—sebuah praktik pertanian berkelanjutan. Panen raya biasanya berlangsung Mei hingga Agustus, namun petani juga melakukan panen sela di Desember–Februari untuk menjaga kualitas dan kebersihan pohon.",
+      "galeri": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753617684/20250712_112344_jkdgbo.webp"
+      ]
+    },
+    {
+      "nama": "Kopi Robusta",
+      "pengantar": "Robusta menjadi tulang punggung produksi kopi Indonesia, menyumbang 80–85% total produksi. Tidak seperti arabika, robusta tumbuh di ketinggian rendah (200–800 mdpl) dan tahan terhadap suhu tropis 24–30°C. Ia juga lebih kuat menghadapi penyakit dan perubahan cuaca. Kandungan kafein robusta lebih tinggi (2,2–2,7%) dibanding arabika (1,2–1,5%), menjadikannya pilihan utama bagi penikmat kopi yang butuh dorongan energi ekstra. Rasa robusta cenderung lebih pahit, kuat, dan earthy, cocok untuk kopi tubruk, espresso, hingga campuran kopi instan dan kopi susu. Ciri fisik biji robusta: lebih kecil, bulat, dan garis tengah lurus, berbeda dari arabika yang lebih lonjong dan beralur melengkung. Karena robusta lebih mudah tumbuh dan panennya melimpah, harga jualnya cenderung lebih terjangkau namun tetap memiliki pasar besar, terutama untuk UMKM dan industri kopi lokal. Proses roasting robusta pun lebih fleksibel, bisa disangrai hingga tingkat dark roast untuk menghasilkan rasa pahit yang khas dan aroma asap yang kuat.",
+      "proses": [
+        "Budidaya: kopi biasanya siap panen setelah 2,5–4 tahun sejak penanaman, ketika buah berubah warna dari hijau menjadi merah cerah (matang sempurna). Waktu panen tergantung jenis varietas dan ketinggian lokasi.",
+        "Pemetikan: dilakukan secara selektif untuk menghasilkan mutu biji terbaik.",
+        "Pulper / Pengupasan Kulit Basah: untuk menghilangkan kulit luar (exocarp) dan daging buah (mesocarp) dari biji kopi.",
+        "Fermentasi dan Pencucian (opsional tapi umum di metode basah): menghilangkan sisa lendir (mucilage) yang menempel pada biji dengan proses fermentasi alami lalu dicuci bersih.",
+        "Pengeringan: menurunkan kadar air biji kopi hingga 11–12%, sehingga biji dapat disimpan dan tidak berjamur.",
+        "Huller / Pengupasan Kulit Kering: mengupas kulit tanduk (parchment) dan kulit ari (silver skin) dari biji kopi kering.",
+        "Roasting (Sangrai): Mengubah biji kopi hijau menjadi biji kopi matang beraroma, melalui pemanasan pada suhu ±230°C selama ±25 menit. Proses sangrai (roasting) menentukan rasa akhir: Light Roast: rasa asam dan ringan, Medium Roast: seimbang antara manis dan pahit, Dark Roast: pahit kuat, aroma smoky.",
+        "Grinding (Penggilingan): mengubah biji kopi matang menjadi bubuk kopi sesuai ukuran gilingan (halus, sedang, kasar) tergantung metode seduh yang diinginkan"
+      ],
+      "galeri": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753617684/20250712_112344_jkdgbo.webp"
+      ]
+    }
+  ]
+}

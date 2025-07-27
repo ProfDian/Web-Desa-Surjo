@@ -39,7 +39,7 @@ export default function Header() {
               <span className="text-sm font-bold text-white sm:text-lg md:text-xl lg:text-2xl bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent leading-tight">
                 DESA WISATA SURJO
               </span>
-              <span className="text-xs text-[#90EE90] font-medium hidden sm:block md:text-sm lg:text-base leading-tight">
+              <span className="text-xs text-[#90EE90] font-bold  hidden sm:block md:text-sm lg:text-base leading-tight">
                 KKNT IDBU 71 Universitas Diponegoro
               </span>
             </div>

@@ -6,7 +6,8 @@
     "pemilik": "Gufron",
     "informasi_kontak": {
       "wa": "0823-22 300 600",
-      "ig": "@kopisurjo_roaster"
+      "ig": "@kopisurjo_roaster",
+      "fb": null
     },
     "alamat": "Dusun Karangsari, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
     "link_maps": "https://maps.app.goo.gl/BHjVfscMhEQS3YUd8",
@@ -41,11 +42,14 @@
     "pengantar_singkat": "Pak Sobirin mulai merintis usaha kopinya sejak tahun 2019, dengan unggulan kopi Robusta proses honey yang memiliki rasa lebih ringan. Ciri khas produknya terletak pada tekstur bubuk yang sangat halus. Tersedia dalam kemasan 250 gram dan 70 gram, kopi SBR cocok dinikmati siapa saja—dari pecinta kopi lokal hingga penikmat harian.",
     "pemilik": "Sobirin",
     "informasi_kontak": {
-      "wa": "0857-56 123 943"
+      "wa": "0857-56 123 943",
+      "ig": null,
+      "fb": null
     },
     "alamat": "Dusun Karangsari, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
     "link_maps": "https://maps.app.goo.gl/Ueai6EXD1Jm1XgZT7",
     "gallery": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428533/IMG-20250720-WA0027_xfvq22.webp",
       "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428533/IMG-20250720-WA0027_xfvq22.webp"
     ]
   },
@@ -93,7 +97,9 @@
     "pengantar_singkat": "Ratu Emping adalah usaha emping rumahan yang sudah dijalankan sejak generasi Pak Wahyu. Produk emping ini dikenal karena kualitas rasanya dan sudah didistribusikan hingga ke Kalimantan dan Pontianak. Ratu Emping menawarkan beberapa varian rasa, sehingga cocok untuk camilan harian maupun oleh-oleh khas dari Desa Surjo.",
     "pemilik": "Pak Eko Wahyu",
     "informasi_kontak": {
-      "wa": "0823-22 367 678"
+      "wa": "0823-22 367 678",
+      "ig": null,
+      "fb": null
     },
     "alamat": "Gondangan, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
     "link_maps": "https://maps.app.goo.gl/adPAWa3uJehWdJtS9",

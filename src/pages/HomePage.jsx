@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import { Target, Eye, CheckCircle, Users } from "lucide-react";
 import AboutSurjo from "../components/AboutSurjo";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -14,7 +15,16 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F4ED]">
+    <motion.div
+      className="min-h-screen bg-[#F7F4ED]"
+      initial={{ opacity: 0, y: 50, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -0, scale: 0.98 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.4, 0.0, 0.2, 1],
+      }}
+    >
       <Header />
 
       {/* Hero Section */}
@@ -321,7 +331,7 @@ const HomePage = () => {
       </main>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

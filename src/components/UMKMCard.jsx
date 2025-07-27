@@ -7,7 +7,6 @@ import {
   ExternalLink,
   Store,
   Users,
-  Heart,
   ChevronLeft,
   ChevronRight,
   Eye,
@@ -16,6 +15,7 @@ import {
 const UMKMCard = ({ umkm, viewMode, onImageClick }) => {
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
   const [isGalleryHovered, setIsGalleryHovered] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const formatPhoneNumber = (phone) => {
     return phone.replace(/[-\s]/g, "").replace(/^0/, "62");
@@ -146,7 +146,7 @@ const UMKMCard = ({ umkm, viewMode, onImageClick }) => {
             <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#65724D]/20 to-[#2A6218]/20">
               <div className="text-center">
                 <Store className="w-20 h-20 text-[#65724D] mx-auto mb-4" />
-                <p className="text-[#3F5231] font-bold text-xl mb-2">
+                <p className="text-[#3F5231] font-bold text-xl mb-2 text align-cente">
                   {umkm.nama_umkm}
                 </p>
                 <p className="text-[#65724D] text-base">Produk {umkm.jenis}</p>
@@ -171,23 +171,36 @@ const UMKMCard = ({ umkm, viewMode, onImageClick }) => {
         } flex flex-col h-full`}
       >
         {/* Header with improved spacing */}
-        <div className="mb-6">
+        <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-[#3F5231] mb-3 group-hover:text-[#2A6218] transition-colors duration-300 line-clamp-2">
             {umkm.nama_umkm}
           </h2>
-          <div className="flex items-center gap-2 text-[#65724D] font-medium">
+          <div className="flex items-center text-center gap-2 text-[#65724D] font-medium ">
             <div className="p-2 bg-[#65724D]/10 rounded-full">
               <Users className="w-4 h-4 text-[#65724D]" />
             </div>
-            <span>Pemilik: {umkm.pemilik}</span>
+            <span>Pemilik: {umkm.pemilik} </span>
           </div>
         </div>
 
         {/* Enhanced Description */}
         <div className="mb-6 flex-1">
-          <p className="text-gray-700 leading-relaxed text-justify line-clamp-4 hover:line-clamp-none transition-all duration-300">
+          {/* Deskripsi dengan line-clamp untuk truncate */}
+          <p
+            className={`text-gray-700 leading-relaxed text-justify transition-all duration-300 ${
+              isExpanded ? "line-clamp-none" : "line-clamp-4"
+            }`}
+          >
             {umkm.pengantar_singkat}
           </p>
+
+          {/* Tombol See More / See Less */}
+          <button
+            onClick={() => setIsExpanded(!isExpanded)} // Toggle antara expand/collapse
+            className="text-[#2A6218] font-semibold mt-2"
+          >
+            {isExpanded ? "See Less" : "See More"}
+          </button>
         </div>
 
         {/* Enhanced Gallery Carousel Preview */}

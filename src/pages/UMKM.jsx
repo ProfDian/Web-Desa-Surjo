@@ -8,14 +8,12 @@ import {
   ChevronLeft,
   ChevronRight,
   Store,
-  Users,
-  Award,
-  Heart,
   Search,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UMKMCard from "../components/UMKMCard";
+import { motion } from "framer-motion";
 
 const UMKMPage = () => {
   const [umkms, setUmkms] = useState([]);
@@ -133,7 +131,16 @@ const UMKMPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F4ED]">
+    <motion.div
+      className="min-h-screen bg-[#F7F4ED]"
+      initial={{ opacity: 0, y: 50, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -0, scale: 0.98 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.4, 0.0, 0.2, 1],
+      }}
+    >
       <Header />
 
       {/* Enhanced Hero Section */}
@@ -411,7 +418,7 @@ const UMKMPage = () => {
       )}
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

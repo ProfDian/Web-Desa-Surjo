@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from "react";
 import {
-  MapPin,
-  Phone,
-  Instagram,
-  Facebook,
-  ExternalLink,
-  ChevronRight,
   Home,
   Filter,
   Grid,
   List,
   X,
   ChevronLeft,
+  ChevronRight,
   Store,
-  Users,
-  Award,
-  TrendingUp,
   Search,
-  ArrowRight,
-  Heart,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import UMKMCard from "../components/UMKMCard";
+import { motion } from "framer-motion";
 
 const UMKMPage = () => {
   const [umkms, setUmkms] = useState([]);
@@ -81,10 +73,6 @@ const UMKMPage = () => {
     setFilteredUmkms(filtered);
   };
 
-  const formatPhoneNumber = (phone) => {
-    return phone.replace(/[-\s]/g, "").replace(/^0/, "62");
-  };
-
   const openImageModal = (images, index) => {
     setSelectedImage(images);
     setCurrentImageIndex(index);
@@ -107,15 +95,23 @@ const UMKMPage = () => {
     );
   };
 
-  const getDefaultImage = (jenis) => {
-    const defaultImages = {
-      Kopi: "https://img.freepik.com/premium-photo/roasted-coffee-beans-hd-8k-wallpaper-stock-photographic-image_890746-34276.jpg",
-      Teh: "https://media.istockphoto.com/id/171279361/id/foto/teh-hitam.jpg?s=612x612&w=0&k=20&c=fKDEX-ruCqRecLPNBP1RDiRpnPRGvkgjB_7VogDafnQ=",
-      Emping:
-        "https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/01/17043837/Meski-Tinggi-Purin-Ini-Manfaat-Emping-Melinjo-bagi-Kesehatan.jpg.webp",
+  // Handle keyboard navigation for modal
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (selectedImage) {
+        if (e.key === "ArrowLeft") {
+          prevImage();
+        } else if (e.key === "ArrowRight") {
+          nextImage();
+        } else if (e.key === "Escape") {
+          closeImageModal();
+        }
+      }
     };
-    return defaultImages[jenis] || "/images/default-umkm.jpg";
-  };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [selectedImage]);
 
   if (loading) {
     return (
@@ -135,10 +131,19 @@ const UMKMPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F7F4ED]">
+    <motion.div
+      className="min-h-screen bg-[#F7F4ED]"
+      initial={{ opacity: 0, y: 50, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -0, scale: 0.98 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.4, 0.0, 0.2, 1],
+      }}
+    >
       <Header />
 
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
       <section className="relative bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#65724D] text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10"></div>
@@ -170,49 +175,15 @@ const UMKMPage = () => {
               terbaik di Desa Wisata Surjo. Setiap produk dibuat dengan cinta
               dan tradisi turun temurun.
             </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
-              <div className="text-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-2 mx-auto w-fit">
-                  <Store className="w-8 h-8 mx-auto text-yellow-300" />
-                </div>
-                <div className="text-2xl font-bold">{umkms.length}</div>
-                <div className="text-sm text-[#F7F4ED]/80">UMKM Aktif</div>
-              </div>
-              <div className="text-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-2 mx-auto w-fit">
-                  <Users className="w-8 h-8 mx-auto text-green-300" />
-                </div>
-                <div className="text-2xl font-bold">
-                  {categories.length - 1}
-                </div>
-                <div className="text-sm text-[#F7F4ED]/80">Kategori</div>
-              </div>
-              <div className="text-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-2 mx-auto w-fit">
-                  <Award className="w-8 h-8 mx-auto text-blue-300" />
-                </div>
-                <div className="text-2xl font-bold">100%</div>
-                <div className="text-sm text-[#F7F4ED]/80">Lokal</div>
-              </div>
-              <div className="text-center">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 mb-2 mx-auto w-fit">
-                  <Heart className="w-8 h-8 mx-auto text-pink-300" />
-                </div>
-                <div className="text-2xl font-bold">100%</div>
-                <div className="text-sm text-[#F7F4ED]/80">Terpercaya</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Filter & Search Section */}
+      {/* Enhanced Filter & Search Section */}
       <section className="bg-white shadow-lg border-b border-[#65724D]/10 sticky top-0 z-40">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
-            {/* Search Bar */}
+            {/* Enhanced Search Bar */}
             <div className="relative flex-1 max-w-md">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#65724D]" />
               <input
@@ -220,11 +191,19 @@ const UMKMPage = () => {
                 placeholder="Cari UMKM atau pemilik..."
                 value={searchTerm}
                 onChange={(e) => handleSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 border-2 border-[#65724D]/20 rounded-xl focus:border-[#2A6218] focus:ring-2 focus:ring-[#2A6218]/20 outline-none transition-all duration-200"
+                className="w-full pl-10 pr-4 py-3 border-2 border-[#65724D]/20 rounded-xl focus:border-[#2A6218] focus:ring-2 focus:ring-[#2A6218]/20 outline-none transition-all duration-200 bg-[#F7F4ED]/30"
               />
+              {searchTerm && (
+                <button
+                  onClick={() => handleSearch("")}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#65724D] hover:text-[#2A6218] transition-colors duration-200"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
             </div>
 
-            {/* Category Filters */}
+            {/* Enhanced Category Filters */}
             <div className="flex items-center gap-3 flex-wrap">
               <Filter className="w-5 h-5 text-[#3F5231]" />
               <span className="text-[#3F5231] font-semibold whitespace-nowrap">
@@ -234,10 +213,10 @@ const UMKMPage = () => {
                 <button
                   key={category}
                   onClick={() => handleCategoryFilter(category)}
-                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                  className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap border-2 ${
                     selectedCategory === category
-                      ? "bg-[#2A6218] text-white shadow-lg transform scale-105"
-                      : "bg-[#F7F4ED] text-[#3F5231] hover:bg-[#65724D] hover:text-white border-2 border-[#65724D]/20 hover:border-[#65724D]"
+                      ? "bg-[#2A6218] text-white shadow-lg transform scale-105 border-[#2A6218]"
+                      : "bg-[#F7F4ED] text-[#3F5231] hover:bg-[#65724D] hover:text-white border-[#65724D]/20 hover:border-[#65724D] hover:shadow-md"
                   }`}
                 >
                   {category}
@@ -245,8 +224,8 @@ const UMKMPage = () => {
               ))}
             </div>
 
-            {/* View Toggle */}
-            <div className="flex items-center bg-[#F7F4ED] rounded-xl p-1 border-2 border-[#65724D]/20">
+            {/* Enhanced View Toggle */}
+            <div className="flex items-center bg-[#F7F4ED] rounded-xl p-2 border-2 border-[#65724D]/20">
               <button
                 onClick={() => setViewMode("grid")}
                 className={`p-3 rounded-lg transition-all duration-200 ${
@@ -254,6 +233,7 @@ const UMKMPage = () => {
                     ? "bg-[#2A6218] text-white shadow-md"
                     : "text-[#3F5231] hover:bg-[#65724D] hover:text-white"
                 }`}
+                title="Tampilan Grid"
               >
                 <Grid className="w-5 h-5" />
               </button>
@@ -264,6 +244,7 @@ const UMKMPage = () => {
                     ? "bg-[#2A6218] text-white shadow-md"
                     : "text-[#3F5231] hover:bg-[#65724D] hover:text-white"
                 }`}
+                title="Tampilan List"
               >
                 <List className="w-5 h-5" />
               </button>
@@ -274,15 +255,23 @@ const UMKMPage = () => {
 
       {/* Results Info */}
       <div className="container mx-auto px-4 py-4">
-        <p className="text-[#65724D] font-medium">
-          Menampilkan {filteredUmkms.length} UMKM
-          {selectedCategory !== "Semua" &&
-            ` dalam kategori "${selectedCategory}"`}
-          {searchTerm && ` dengan pencarian "${searchTerm}"`}
-        </p>
+        <div className="flex items-center justify-between">
+          <p className="text-[#65724D] font-medium">
+            Menampilkan {filteredUmkms.length} dari {umkms.length} UMKM
+            {selectedCategory !== "Semua" &&
+              ` dalam kategori "${selectedCategory}"`}
+            {searchTerm && ` dengan pencarian "${searchTerm}"`}
+          </p>
+          {filteredUmkms.length > 0 && (
+            <div className="text-sm text-[#65724D]/60 flex items-center gap-2">
+              <span>Tampilan:</span>
+              <span className="font-medium capitalize">{viewMode}</span>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* UMKM Cards */}
+      {/* UMKM Cards using UMKMCard Component */}
       <section className="container mx-auto px-4 pb-16">
         <div
           className={`${
@@ -292,283 +281,144 @@ const UMKMPage = () => {
           }`}
         >
           {filteredUmkms.map((umkm, index) => (
-            <article
-              key={index}
-              className={`group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-[#65724D]/10 hover:border-[#2A6218]/30 hover:-translate-y-2 ${
-                viewMode === "list" ? "flex flex-col lg:flex-row" : ""
-              }`}
-            >
-              {/* Image Section */}
-              <div
-                className={`${
-                  viewMode === "list" ? "lg:w-80 lg:flex-shrink-0" : ""
-                } relative overflow-hidden`}
-              >
-                <div
-                  className={`${
-                    viewMode === "grid" ? "h-64" : "h-64 lg:h-full"
-                  } bg-gradient-to-br from-[#65724D]/10 to-[#2A6218]/10 relative`}
-                >
-                  {umkm.gallery && umkm.gallery.length > 0 ? (
-                    <>
-                      <img
-                        src={umkm.gallery[0]}
-                        alt={umkm.nama_umkm}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 cursor-pointer"
-                        onClick={() => openImageModal(umkm.gallery, 0)}
-                        onError={(e) => {
-                          e.target.src = getDefaultImage(umkm.jenis);
-                        }}
-                      />
-                      {umkm.gallery.length > 1 && (
-                        <div className="absolute top-4 right-4 bg-[#2A6218]/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium">
-                          +{umkm.gallery.length - 1} foto
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#65724D]/20 to-[#2A6218]/20">
-                      <div className="text-center">
-                        <Store className="w-16 h-16 text-[#65724D] mx-auto mb-3" />
-                        <p className="text-[#3F5231] font-medium text-lg">
-                          {umkm.nama_umkm}
-                        </p>
-                        <p className="text-[#65724D] text-sm mt-1">
-                          Produk {umkm.jenis}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-block bg-white/95 backdrop-blur-sm text-[#2A6218] px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-[#2A6218]/20">
-                      {umkm.jenis}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Content Section */}
-              <div
-                className={`p-8 ${
-                  viewMode === "list" ? "flex-1" : ""
-                } flex flex-col`}
-              >
-                {/* Header */}
-                <div className="mb-6">
-                  <h2 className="text-2xl font-bold text-[#3F5231] mb-3 group-hover:text-[#2A6218] transition-colors duration-300">
-                    {umkm.nama_umkm}
-                  </h2>
-                  <div className="flex items-center gap-2 text-[#65724D] font-medium">
-                    <Users className="w-4 h-4" />
-                    <span>Pemilik: {umkm.pemilik}</span>
-                  </div>
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-700 mb-6 leading-relaxed text-justify flex-1">
-                  {umkm.pengantar_singkat}
-                </p>
-
-                {/* Gallery Thumbnails */}
-                {umkm.gallery && umkm.gallery.length > 1 && (
-                  <div className="mb-6">
-                    <h4 className="text-sm font-bold text-[#3F5231] mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 bg-[#2A6218] rounded-full"></span>
-                      Galeri
-                    </h4>
-                    <div className="flex gap-2 overflow-x-auto pb-2">
-                      {umkm.gallery.slice(0, 5).map((image, idx) => (
-                        <img
-                          key={idx}
-                          src={image}
-                          alt={`${umkm.nama_umkm} ${idx + 1}`}
-                          className="w-16 h-16 object-cover rounded-xl cursor-pointer hover:ring-4 hover:ring-[#2A6218]/30 transition-all duration-300 flex-shrink-0 hover:scale-110"
-                          onClick={() => openImageModal(umkm.gallery, idx)}
-                        />
-                      ))}
-                      {umkm.gallery.length > 5 && (
-                        <div
-                          className="w-16 h-16 bg-gradient-to-br from-[#65724D] to-[#2A6218] rounded-xl flex items-center justify-center text-white text-xs font-bold cursor-pointer hover:scale-110 transition-transform duration-300 flex-shrink-0"
-                          onClick={() => openImageModal(umkm.gallery, 0)}
-                        >
-                          +{umkm.gallery.length - 5}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* Contact Section */}
-                <div className="space-y-4 mb-6">
-                  <h4 className="text-sm font-bold text-[#3F5231] flex items-center gap-2">
-                    <span className="w-2 h-2 bg-[#2A6218] rounded-full"></span>
-                    Hubungi Kami
-                  </h4>
-
-                  {umkm.informasi_kontak.wa && (
-                    <a
-                      href={`https://wa.me/${formatPhoneNumber(
-                        umkm.informasi_kontak.wa
-                      )}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-4 bg-green-50 hover:bg-green-100 p-4 rounded-2xl transition-all duration-300 group/contact border border-green-200 hover:border-green-300"
-                    >
-                      <div className="p-3 bg-green-500 rounded-2xl group-hover/contact:scale-110 transition-transform duration-300">
-                        <Phone className="w-5 h-5 text-white" />
-                      </div>
-                      <div className="flex-1">
-                        <p className="font-semibold text-green-800">WhatsApp</p>
-                        <p className="text-green-600 text-sm">
-                          {umkm.informasi_kontak.wa}
-                        </p>
-                      </div>
-                      <ExternalLink className="w-4 h-4 text-green-500 group-hover/contact:translate-x-1 transition-transform duration-300" />
-                    </a>
-                  )}
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {umkm.informasi_kontak.ig && (
-                      <a
-                        href={`https://instagram.com/${umkm.informasi_kontak.ig.replace(
-                          "@",
-                          ""
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 bg-pink-50 hover:bg-pink-100 p-3 rounded-xl transition-all duration-300 group/social border border-pink-200 hover:border-pink-300"
-                      >
-                        <div className="p-2 bg-pink-500 rounded-xl group-hover/social:scale-110 transition-transform duration-300">
-                          <Instagram className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-medium text-pink-800 text-sm truncate">
-                            {umkm.informasi_kontak.ig}
-                          </p>
-                        </div>
-                      </a>
-                    )}
-
-                    {umkm.informasi_kontak.fb && (
-                      <a
-                        href={`https://facebook.com/${umkm.informasi_kontak.fb.replace(
-                          "@",
-                          ""
-                        )}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-3 bg-blue-50 hover:bg-blue-100 p-3 rounded-xl transition-all duration-300 group/social border border-blue-200 hover:border-blue-300"
-                      >
-                        <div className="p-2 bg-blue-500 rounded-xl group-hover/social:scale-110 transition-transform duration-300">
-                          <Facebook className="w-4 h-4 text-white" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <p className="font-medium text-blue-800 text-sm truncate">
-                            {umkm.informasi_kontak.fb}
-                          </p>
-                        </div>
-                      </a>
-                    )}
-                  </div>
-                </div>
-
-                {/* Location & Maps */}
-                <div className="border-t border-[#65724D]/20 pt-6">
-                  <div className="flex items-start gap-3 mb-4">
-                    <MapPin className="w-5 h-5 text-[#2A6218] mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 text-sm leading-relaxed">
-                      {umkm.alamat}
-                    </p>
-                  </div>
-                  <a
-                    href={umkm.link_maps}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-gradient-to-r from-[#2A6218] to-[#3F5231] hover:from-[#3F5231] hover:to-[#2A6218] text-white px-6 py-3 rounded-2xl font-semibold hover:shadow-xl transition-all duration-300 group/maps"
-                  >
-                    <MapPin className="w-5 h-5 group-hover/maps:scale-110 transition-transform duration-300" />
-                    Lihat Lokasi di Maps
-                    <ExternalLink className="w-4 h-4 group-hover/maps:translate-x-1 transition-transform duration-300" />
-                  </a>
-                </div>
-              </div>
-            </article>
+            <UMKMCard
+              key={`${umkm.nama_umkm}-${index}`}
+              umkm={umkm}
+              viewMode={viewMode}
+              onImageClick={openImageModal}
+            />
           ))}
         </div>
 
-        {/* Empty State */}
+        {/* Enhanced Empty State */}
         {filteredUmkms.length === 0 && (
           <div className="text-center py-16">
             <div className="bg-white rounded-3xl p-12 shadow-lg border border-[#65724D]/10 max-w-md mx-auto">
-              <Store className="w-16 h-16 text-[#65724D] mx-auto mb-6" />
+              <div className="bg-[#65724D]/10 rounded-full p-6 w-fit mx-auto mb-6">
+                <Store className="w-16 h-16 text-[#65724D] mx-auto" />
+              </div>
               <h3 className="text-xl font-semibold text-[#3F5231] mb-3">
                 Tidak Ada UMKM Ditemukan
               </h3>
-              <p className="text-[#65724D] mb-6">
+              <p className="text-[#65724D] mb-6 leading-relaxed">
                 Tidak ada UMKM yang sesuai dengan kriteria pencarian Anda.
+                <br />
+                Silakan coba kata kunci lain atau reset filter.
               </p>
-              <button
-                onClick={() => {
-                  setSelectedCategory("Semua");
-                  setSearchTerm("");
-                  setFilteredUmkms(umkms);
-                }}
-                className="bg-gradient-to-r from-[#2A6218] to-[#3F5231] text-white px-6 py-3 rounded-2xl font-semibold hover:shadow-lg transition-all duration-300"
-              >
-                Reset Filter
-              </button>
+              <div className="space-y-3">
+                <button
+                  onClick={() => {
+                    setSelectedCategory("Semua");
+                    setSearchTerm("");
+                    setFilteredUmkms(umkms);
+                  }}
+                  className="bg-gradient-to-r from-[#2A6218] to-[#3F5231] text-white px-6 py-3 rounded-2xl font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 w-full"
+                >
+                  Reset Semua Filter
+                </button>
+                {searchTerm && (
+                  <button
+                    onClick={() => {
+                      setSearchTerm("");
+                      filterUmkms(selectedCategory, "");
+                    }}
+                    className="text-[#2A6218] hover:text-[#3F5231] font-medium transition-colors duration-200"
+                  >
+                    Hapus pencarian "{searchTerm}"
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         )}
       </section>
 
-      {/* Image Modal */}
+      {/* Enhanced Image Modal */}
       {selectedImage && (
         <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-5xl w-full">
+          <div className="relative max-w-6xl w-full">
+            {/* Close Button */}
             <button
               onClick={closeImageModal}
-              className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+              className="absolute top-4 right-4 z-20 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
+              title="Tutup (ESC)"
             >
               <X className="w-6 h-6" />
             </button>
 
+            {/* Navigation Buttons */}
             {selectedImage.length > 1 && (
               <>
                 <button
                   onClick={prevImage}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
+                  title="Gambar Sebelumnya (←)"
                 >
                   <ChevronLeft className="w-6 h-6" />
                 </button>
                 <button
                   onClick={nextImage}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300 backdrop-blur-sm"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-4 rounded-full transition-all duration-300 backdrop-blur-sm hover:scale-110"
+                  title="Gambar Selanjutnya (→)"
                 >
                   <ChevronRight className="w-6 h-6" />
                 </button>
               </>
             )}
 
-            <img
-              src={selectedImage[currentImageIndex]}
-              alt={`Gallery ${currentImageIndex + 1}`}
-              className="w-full h-auto max-h-[85vh] object-contain rounded-2xl"
-            />
+            {/* Main Image */}
+            <div className="relative">
+              <img
+                src={selectedImage[currentImageIndex]}
+                alt={`Gallery ${currentImageIndex + 1}`}
+                className="w-full h-auto max-h-[85vh] object-contain rounded-2xl shadow-2xl"
+              />
 
+              {/* Image Counter */}
+              {selectedImage.length > 1 && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2">
+                  <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                  {currentImageIndex + 1} / {selectedImage.length}
+                </div>
+              )}
+            </div>
+
+            {/* Thumbnail Navigation */}
             {selectedImage.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium">
-                {currentImageIndex + 1} / {selectedImage.length}
+              <div className="flex justify-center gap-2 mt-6 overflow-x-auto pb-2 max-w-full">
+                <div className="flex gap-2">
+                  {selectedImage.map((image, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                        index === currentImageIndex
+                          ? "border-white scale-110 shadow-lg"
+                          : "border-white/30 hover:border-white/60 hover:scale-105 opacity-70 hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={image}
+                        alt={`Thumbnail ${index + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
+
+            {/* Modal Background Click to Close */}
+            <div
+              className="absolute inset-0 -z-10"
+              onClick={closeImageModal}
+            ></div>
           </div>
         </div>
       )}
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

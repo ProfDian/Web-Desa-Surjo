@@ -8,6 +8,7 @@ import {
   BookOpen,
   ChevronRight,
   Calendar,
+  Home,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -54,23 +55,23 @@ const Sejarah = () => {
     <div className="min-h-screen bg-[#F7F4ED]">
       <Header />
 
-      {/* Enhanced Breadcrumb */}
-      <div className="bg-gradient-to-r from-[#F7F4ED] via-[#E8F5E8] to-[#F7F4ED] border-b border-[#65724D]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
-          <nav className="flex items-center space-x-2 text-sm font-medium">
+      {/* Enhanced Breadcrumb - Match UMKM.jsx */}
+      <section className="relative bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#65724D] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative container mx-auto px-4 pt-24 pb-4">
+          <nav className="flex items-center justify-center space-x-2 text-sm mb-4 opacity-90">
             <button
               onClick={() => navigate("/")}
-              className="flex items-center text-[#65724D] hover:text-[#2A6218] transition-colors duration-200 group"
+              className="flex items-center hover:text-[#F7F4ED] transition-colors duration-200"
             >
-              <span className="group-hover:underline">Beranda</span>
+              <Home className="w-4 h-4 mr-1" />
+              Beranda
             </button>
-            <ChevronRight className="w-4 h-4 text-[#65724D]/50" />
-            <span className="text-[#2A6218] font-semibold">
-              Sejarah Desa Surjo
-            </span>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-[#F7F4ED] font-medium">Sejarah Desa Surjo</span>
           </nav>
         </div>
-      </div>
+      </section>
 
       {/* Hero Section - Redesigned */}
       <section className="relative py-12 lg:py-20 overflow-hidden">

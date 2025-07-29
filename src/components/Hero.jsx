@@ -104,7 +104,7 @@ export default function Hero() {
           {/* Announcement banner */}
           <div className="mb-8">
             <div className="inline-block rounded-full px-4 py-2 text-sm text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
-              Selamat datang di website resmi Desa Surjo.{" "}
+              Selamat datang di website resmi Desa Wisata Surjo.{" "}
               <a
                 href="#tentang"
                 className="font-semibold text-white underline hover:text-white/80"
@@ -117,7 +117,9 @@ export default function Hero() {
           {/* Main heading */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
             Selamat Datang di{" "}
-            <span className="text-[#90EE90] drop-shadow-lg">Desa Surjo</span>
+            <span className="text-[#90EE90] drop-shadow-lg">
+              Desa Wisata Surjo
+            </span>
           </h1>
 
           {/* Dynamic description based on current slide */}

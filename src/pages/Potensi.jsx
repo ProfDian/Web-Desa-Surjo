@@ -1,283 +1,478 @@
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Leaf,
+  Coffee,
+  Mountain,
+  Eye,
+  X,
+  MapPin,
+  Users,
+  TrendingUp,
+  Award,
+  ArrowRight,
+  Play,
+  Sparkles,
+  Home,
+  ChevronRight,
+} from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { motion } from "framer-motion";
 
 const Potensi = () => {
-  const navigate = useNavigate();
+  const [potensiData, setPotensiData] = useState(null);
+  const [expandedCards, setExpandedCards] = useState({});
+  const [selectedGallery, setSelectedGallery] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/data/Potensi Desa.json");
+        const data = await response.json();
+        setPotensiData(data);
+      } catch (error) {
+        console.error("Error loading data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const toggleCard = (index) => {
+    setExpandedCards((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
+  const getIcon = (nama) => {
+    if (nama.toLowerCase().includes("teh")) return <Leaf className="w-6 h-6" />;
+    if (nama.toLowerCase().includes("kopi"))
+      return <Coffee className="w-6 h-6" />;
+    return <Mountain className="w-6 h-6" />;
+  };
+
+  const getGradient = (index) => {
+    const gradients = [
+      "from-[#2A6218] to-[#3F5231]",
+      "from-[#65724D] to-[#3F5231]",
+      "from-[#2A6218] to-[#65724D]",
+    ];
+    return gradients[index % gradients.length];
+  };
+
+  const getAccentColors = (index) => {
+    const colorSets = [
+      {
+        bg: "bg-[#2A6218]",
+        text: "text-[#2A6218]",
+        border: "border-[#2A6218]",
+        bgLight: "bg-[#2A6218]/10",
+        bgLighter: "bg-[#2A6218]/20",
+      },
+      {
+        bg: "bg-[#65724D]",
+        text: "text-[#65724D]",
+        border: "border-[#65724D]",
+        bgLight: "bg-[#65724D]/10",
+        bgLighter: "bg-[#65724D]/20",
+      },
+      {
+        bg: "bg-[#3F5231]",
+        text: "text-[#3F5231]",
+        border: "border-[#3F5231]",
+        bgLight: "bg-[#3F5231]/10",
+        bgLighter: "bg-[#3F5231]/20",
+      },
+    ];
+    return colorSets[index % colorSets.length];
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#F7F4ED] flex items-center justify-center">
+        <div className="flex flex-col items-center space-y-6">
+          <div className="relative">
+            <div className="animate-spin rounded-full h-16 w-16 border-4 border-[#2A6218]/20"></div>
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-[#2A6218] absolute top-0"></div>
+          </div>
+          <div className="text-center">
+            <p className="text-[#3F5231] font-semibold text-lg">
+              Memuat Potensi Desa
+            </p>
+            <p className="text-[#65724D] text-sm mt-1">
+              Mohon tunggu sebentar...
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!potensiData) {
+    return (
+      <div className="min-h-screen bg-[#F7F4ED] flex items-center justify-center">
+        <div className="text-center p-8 bg-white rounded-2xl shadow-lg">
+          <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <X className="w-8 h-8 text-red-500" />
+          </div>
+          <p className="text-[#3F5231] text-lg font-medium">
+            Data tidak dapat dimuat
+          </p>
+          <p className="text-[#65724D] text-sm mt-2">Silakan coba lagi nanti</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#F7F4ED] to-[#E8F5E8]">
+    <div className="min-h-screen bg-[#F7F4ED]">
       <Header />
 
-      {/* Breadcrumb - Added proper spacing from header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-6">
-        <nav className="text-sm text-[#3F5231] font-medium flex items-center space-x-2">
-          <button
-            onClick={() => navigate("/")}
-            className="hover:underline hover:text-[#2A6218] focus:outline-none bg-transparent border-none p-0 m-0 text-inherit cursor-pointer transition-colors"
-            style={{ background: "none" }}
-          >
-            Home
-          </button>
-          <span>/</span>
-          <span>Potensi Desa Surjo</span>
-        </nav>
+      {/* Enhanced Breadcrumb - Match UMKM & Sejarah */}
+      <section className="relative bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#65724D] text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/10"></div>
+        <div className="relative container mx-auto px-4 pt-24 pb-4">
+          <nav className="flex items-center justify-center space-x-2 text-sm mb-4 opacity-90">
+            <a href="/" className="flex items-center hover:text-[#F7F4ED] transition-colors duration-200">
+              <Home className="w-4 h-4 mr-1" />
+              Beranda
+            </a>
+            <ChevronRight className="w-4 h-4" />
+            <span className="text-[#F7F4ED] font-medium">Potensi Desa Surjo</span>
+          </nav>
+        </div>
+      </section>
+
+      {/* Hero Section */}
+      <div className="relative overflow-hidden pt-4 lg:pt-8">
+        {/* Background decorations */}
+        <div className="absolute inset-0">
+          <div className="absolute top-20 left-10 w-72 h-72 bg-[#2A6218]/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#65724D]/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div className="relative container mx-auto px-4 py-16 lg:py-24">
+          <div className="max-w-6xl mx-auto">
+            {/* Title section */}
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center px-4 py-2 bg-[#2A6218]/10 rounded-full mb-6">
+                <Sparkles className="w-4 h-4 text-[#2A6218] mr-2" />
+                <span className="text-[#3F5231] font-medium text-sm">
+                  Kekayaan Alam Desa
+                </span>
+              </div>
+
+              <h1 className="text-4xl lg:text-7xl font-bold mb-8 leading-tight">
+                <span className="text-[#3F5231]">Potensi</span>
+                <br />
+                <span className="bg-gradient-to-r from-[#2A6218] to-[#65724D] bg-clip-text text-transparent">
+                  Desa Surjo
+                </span>
+              </h1>
+
+              <div className="w-24 h-1.5 bg-gradient-to-r from-[#2A6218] to-[#65724D] mx-auto rounded-full mb-8"></div>
+            </div>
+
+            {/* Introduction content */}
+            <div className="grid lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8">
+                <div className="prose prose-lg max-w-none">
+                  <p className="text-[#65724D] leading-relaxed text-lg font-medium mb-6">
+                    {potensiData.pengantar}
+                  </p>
+                </div>
+
+                {/* Stats cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#2A6218]/20">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-[#2A6218]/10 rounded-xl flex items-center justify-center">
+                        <TrendingUp className="w-6 h-6 text-[#2A6218]" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-[#3F5231]">
+                          {potensiData.komoditas_unggulan?.length || 0}
+                        </p>
+                        <p className="text-sm text-[#65724D]">
+                          Komoditas Unggulan
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#2A6218]/20">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-[#65724D]/10 rounded-xl flex items-center justify-center">
+                        <Users className="w-6 h-6 text-[#65724D]" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-[#3F5231]">
+                          100+
+                        </p>
+                        <p className="text-sm text-[#65724D]">
+                          Petani Terlibat
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#2A6218]/20">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-[#3F5231]/10 rounded-xl flex items-center justify-center">
+                        <Award className="w-6 h-6 text-[#3F5231]" />
+                      </div>
+                      <div>
+                        <p className="text-2xl font-bold text-[#3F5231]">
+                          Premium
+                        </p>
+                        <p className="text-sm text-[#65724D]">
+                          Kualitas Produk
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-4">
+                <div className="relative">
+                  <div className="aspect-square bg-gradient-to-br from-[#2A6218] to-[#3F5231] rounded-3xl p-8 text-white relative overflow-hidden">
+                    <div className="absolute inset-0 opacity-30">
+                      <div className="absolute top-4 left-4 w-8 h-8 bg-white/20 rounded-full"></div>
+                      <div className="absolute top-16 right-8 w-4 h-4 bg-white/20 rounded-full"></div>
+                      <div className="absolute bottom-8 left-12 w-6 h-6 bg-white/20 rounded-full"></div>
+                    </div>
+                    <div className="relative h-full flex flex-col justify-center text-center">
+                      <MapPin className="w-16 h-16 mx-auto mb-4 opacity-90" />
+                      <h3 className="text-2xl font-bold mb-2">LOREM IPSUM</h3>
+                      <p className="text-white/90 text-sm leading-relaxed">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quisquam, quidem.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Hero Section - Reduced top padding since breadcrumb now has proper spacing */}
-      <section className="relative py-8 lg:py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-[#2A6218] rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-20 w-48 h-48 bg-[#4A7C59] rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block relative mb-8">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#3F5231] mb-6 tracking-tight">
-                Sejarah Desa Surjo
-              </h1>
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full h-3 bg-gradient-to-r from-transparent via-[#2A6218] to-transparent opacity-20 blur-sm"></div>
-            </div>
-
-            <div className="relative flex justify-center items-center mb-12">
-              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-[#2A6218]"></div>
-              <div className="w-8 h-8 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-full mx-4 shadow-lg flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-              <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-[#4A7C59]"></div>
-            </div>
-
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-              Desa Surjo, yang terletak di wilayah Kecamatan Bawang, Kabupaten
-              Batang, merupakan desa yang menyimpan jejak panjang sejarah
-              kolonialisme dan perdagangan di Jawa Tengah. Berdasarkan catatan
-              dan cerita masyarakat setempat, Surjo sejatinya adalah wilayah
-              penting di masa lalu bukan sekadar desa biasa, melainkan kawasan
-              yang seharusnya menjadi pusat pemerintahan kecamatan, bahkan
-              distrik. Pada masa kolonial Belanda, arsip-arsip lama menunjukkan
-              adanya Distrik Surjo, bukan Distrik Bawang. Bahkan hingga kini,
-              data sejarah resmi mengenai Distrik Bawang hampir tidak ditemukan,
-              sedangkan catatan tentang Distrik Surjo pernah ada. Hal ini
-              diperkuat oleh keberadaan pasar tradisional di Surjo yang sudah
-              berdiri sejak tahun 1884, menjadi pusat aktivitas ekonomi dan
-              titik kumpul masyarakat kala itu. Keberadaan pasar ini menandai
-              peran strategis Surjo sebagai pusat perdagangan dan pertemuan
-              antar bangsa, termasuk Belanda, Tionghoa, dan penduduk lokal.
-            </p>
+      {/* Komoditas Section */}
+      <div className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#2A6218]/10 to-[#65724D]/10 rounded-full mb-6">
+            <Leaf className="w-4 h-4 text-[#2A6218] mr-2" />
+            <span className="text-[#3F5231] font-medium text-sm">
+              Produk Unggulan
+            </span>
           </div>
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-[#3F5231] mb-6">
+            Komoditas <span className="text-[#2A6218]">Terbaik</span>
+          </h2>
+
+          <p className="text-[#65724D] text-lg max-w-3xl mx-auto leading-relaxed">
+            Kekayaan alam yang menjadi kebanggaan dan sumber ekonomi
+            berkelanjutan bagi masyarakat Desa Surjo dengan kualitas premium
+            yang telah teruji
+          </p>
         </div>
-      </section>
 
-      {/* Main Content */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-12 lg:space-y-20">
-            {/* Content Block 1 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#2A6218] to-[#4A7C59] rounded-3xl opacity-20 blur-lg"></div>
-                <img
-                  src="https://dio-living.id/wp-content/uploads/2022/05/1566911962-keragaman-.jpg"
-                  alt="Sejarah Awal Desa Surjo"
-                  className="relative w-full h-64 lg:h-80 object-cover rounded-2xl shadow-2xl"
-                />
-              </div>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-xl flex items-center justify-center text-2xl">
-                    🏛️
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {potensiData.komoditas_unggulan.map((komoditas, index) => {
+            const colors = getAccentColors(index);
+            return (
+              <div
+                key={index}
+                className="group bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-[#2A6218]/10 hover:border-[#2A6218]/30"
+              >
+                {/* Card Header */}
+                <div
+                  className={`relative p-8 bg-gradient-to-br ${getGradient(
+                    index
+                  )} text-white overflow-hidden`}
+                >
+                  <div className="absolute inset-0 opacity-20">
+                    <div className="absolute top-4 left-4 w-8 h-8 bg-white/30 rounded-full"></div>
+                    <div className="absolute top-16 right-8 w-4 h-4 bg-white/30 rounded-full"></div>
+                    <div className="absolute bottom-8 left-12 w-6 h-6 bg-white/30 rounded-full"></div>
                   </div>
-                  <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-[#3F5231]">
-                      Pusat Perdagangan dan Jejak Kolonial
-                    </h2>
-                    <span className="text-[#2A6218] font-semibold">
-                      Desa Surjo
-                    </span>
+
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        {getIcon(komoditas.nama)}
+                      </div>
+                      <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <span className="text-sm font-bold">{index + 1}</span>
+                      </div>
+                    </div>
+
+                    <h3 className="text-2xl font-bold mb-2 group-hover:translate-x-1 transition-transform duration-300">
+                      {komoditas.nama}
+                    </h3>
+                    <div className="flex items-center space-x-2 text-white/90">
+                      <Award className="w-4 h-4" />
+                      <span className="text-sm font-medium">
+                        Produk Unggulan
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Pada era kolonial, Desa Surjo menjadi jalur dan tempat
-                  aktivitas para saudagar, termasuk pedagang dari etnis
-                  Tionghoa. Bahkan, jejak pemukiman dan pemakaman etnis Tionghoa
-                  masih dapat ditemukan di kawasan desa hingga saat ini. Bukti
-                  ini mempertegas peran Surjo sebagai salah satu sentra
-                  perdagangan dan lintas budaya di kawasan Batang.
-                </p>
-                <p>
-                  Selain menjadi pusat ekonomi, Surjo juga pernah menjadi saksi
-                  peperangan antara pihak Belanda dan kelompok masyarakat
-                  Tionghoa, sebelum kemudian pecah konflik di masa pendudukan
-                  Jepang. Wilayah Pengempon, yang berdekatan dengan Surjo,
-                  menjadi titik kumpul pasukan, namun medan pertempuran utamanya
-                  justru terjadi di Desa Surjo. Ini menunjukkan betapa
-                  strategisnya posisi Surjo secara militer dan geografis pada
-                  masa itu.
-                </p>
-                <p>
-                  Keputusan kolonial untuk memindahkan pusat kecamatan ke
-                  Bawang, diyakini lebih karena letak Bawang yang berada di
-                  titik tengah wilayah administratif, bukan karena faktor
-                  sejarah atau kekuatan ekonomi. Namun, secara historis, Surjo
-                  lebih dulu menjadi pusat distrik dan titik ekonomi di kawasan
-                  ini.
-                </p>
-              </div>
-            </div>
 
-            {/* Content Block 2 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="space-y-6 lg:order-1">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-xl flex items-center justify-center text-2xl">
-                    🎭
-                  </div>
-                  <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-[#3F5231]">
-                      Budaya dan Tradisi
-                    </h2>
-                    <span className="text-[#2A6218] font-semibold">
-                      Komoditas Kopi, Teh, dan Tradisi Minum
-                    </span>
-                  </div>
-                </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Seiring masuknya penjajah Belanda, kebiasaan minum kopi dan
-                  teh mulai membudaya di kalangan penduduk Surjo. Hal ini tidak
-                  terlepas dari kebiasaan para tuan tanah dan pengusaha
-                  perkebunan Belanda yang memperkenalkan kopi dan teh sebagai
-                  komoditas penting. Tanah di sekitar Surjo yang subur
-                  dimanfaatkan untuk budidaya tanaman tersebut. Hingga kini,
-                  tradisi minum kopi dan teh tetap hidup dan menjadi bagian dari
-                  identitas masyarakat Surjo, bahkan berkembang menjadi salah
-                  satu daya tarik wisata desa. Menurut catatan dari Sejarah Kopi
-                  Indonesia (Pusat Penelitian Kopi dan Kakao Indonesia),
-                  kebiasaan minum kopi di Indonesia memang berkembang pesat pada
-                  abad ke-19, seiring dengan dibukanya perkebunan kopi di
-                  wilayah Jawa oleh Belanda. Desa Surjo adalah bagian dari
-                  sejarah besar itu di lingkup lokal Batang.
-                </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Sejarah Desa Surjo bukan hanya soal kisah lokal, tapi potret
-                  kecil dari cerita besar kolonialisme, perdagangan, dan
-                  kebudayaan di Indonesia. Sebagai desa dengan jejak kolonial
-                  Belanda, pengaruh peranakan Tionghoa, dan titik strategis
-                  dalam perekonomian kawasan, Surjo layak dikenang sebagai pusat
-                  sejarah dan budaya yang hidup hingga kini.
-                </p>
-              </div>
-              <div className="relative lg:order-2">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#4A7C59] to-[#2A6218] rounded-3xl opacity-20 blur-lg"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80"
-                  alt="Budaya dan Tradisi"
-                  className="relative w-full h-64 lg:h-80 object-cover rounded-2xl shadow-2xl"
-                />
-              </div>
-            </div>
+                {/* Card Content */}
+                <div className="p-8">
+                  <p className="text-[#65724D] leading-relaxed mb-6 text-base">
+                    {komoditas.pengantar}
+                  </p>
 
-            {/* Content Block 3 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#2A6218] to-[#4A7C59] rounded-3xl opacity-20 blur-lg"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80"
-                  alt="Era Kemerdekaan"
-                  className="relative w-full h-64 lg:h-80 object-cover rounded-2xl shadow-2xl"
-                />
-              </div>
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-xl flex items-center justify-center text-2xl">
-                    🏗️
-                  </div>
-                  <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-[#3F5231]">
-                      Era Pembangunan
-                    </h2>
-                    <span className="text-[#2A6218] font-semibold">
-                      1945 - 1990
-                    </span>
-                  </div>
-                </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Itaque earum rerum hic tenetur a sapiente delectus, ut aut
-                  reiciendis voluptatibus maiores alias consequatur aut
-                  perferendis doloribus asperiores repellat. Sed ut perspiciatis
-                  unde omnis iste natus error sit voluptatem accusantium
-                  doloremque laudantium.
-                </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                  odit aut fugit, sed quia consequuntur magni dolores eos qui
-                  ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-                  qui dolorem ipsum quia dolor sit amet.
-                </p>
-              </div>
-            </div>
+                  {/* Proses Section */}
+                  {komoditas.proses && komoditas.proses.length > 0 && (
+                    <div className="mb-6">
+                      <button
+                        onClick={() => toggleCard(index)}
+                        className={`flex items-center justify-between w-full p-4 ${colors.bgLight} hover:${colors.bgLighter} rounded-2xl transition-all duration-300 group/btn`}
+                      >
+                        <div className="flex items-center space-x-3">
+                          <div
+                            className={`w-8 h-8 ${colors.bg} rounded-lg flex items-center justify-center`}
+                          >
+                            <Play className="w-4 h-4 text-white" />
+                          </div>
+                          <span className={`font-semibold ${colors.text}`}>
+                            Proses Produksi
+                          </span>
+                        </div>
+                        <div className="group-hover/btn:scale-110 transition-transform duration-200">
+                          {expandedCards[index] ? (
+                            <ChevronUp className={`w-5 h-5 ${colors.text}`} />
+                          ) : (
+                            <ChevronDown className={`w-5 h-5 ${colors.text}`} />
+                          )}
+                        </div>
+                      </button>
 
-            {/* Content Block 4 */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-              <div className="space-y-6 lg:order-1">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-xl flex items-center justify-center text-2xl">
-                    🌟
-                  </div>
-                  <div>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-[#3F5231]">
-                      Masa Kini
-                    </h2>
-                    <span className="text-[#2A6218] font-semibold">
-                      1990 - Sekarang
-                    </span>
-                  </div>
+                      {expandedCards[index] && (
+                        <div className="mt-4 space-y-3 animate-in slide-in-from-top duration-500">
+                          {komoditas.proses.map((step, stepIndex) => (
+                            <div
+                              key={stepIndex}
+                              className={`flex items-start space-x-4 p-4 bg-gradient-to-r from-white to-[#F7F4ED] border-l-4 ${colors.border} rounded-r-2xl hover:shadow-md transition-all duration-300`}
+                            >
+                              <div
+                                className={`w-8 h-8 ${colors.bg} rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-md`}
+                              >
+                                {stepIndex + 1}
+                              </div>
+                              <p className="text-[#65724D] leading-relaxed flex-1">
+                                {step}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Gallery Section */}
+                  {komoditas.galeri && komoditas.galeri.length > 0 ? (
+                    <div>
+                      <div className="flex items-center space-x-2 mb-4">
+                        <Eye className={`w-5 h-5 ${colors.text}`} />
+                        <h4 className={`font-semibold ${colors.text}`}>
+                          Galeri Produk
+                        </h4>
+                      </div>
+                      <div className="grid grid-cols-2 gap-3">
+                        {komoditas.galeri.slice(0, 4).map((image, imgIndex) => (
+                          <div
+                            key={imgIndex}
+                            className="aspect-square bg-[#F7F4ED] rounded-2xl overflow-hidden cursor-pointer hover:scale-105 hover:shadow-lg transition-all duration-300 group/img border border-[#2A6218]/10"
+                            onClick={() =>
+                              setSelectedGallery({
+                                komoditas: komoditas.nama,
+                                images: komoditas.galeri,
+                                index: imgIndex,
+                              })
+                            }
+                          >
+                            <img
+                              src={image}
+                              alt={`${komoditas.nama} ${imgIndex + 1}`}
+                              className="w-full h-full object-cover group-hover/img:scale-110 transition-transform duration-500"
+                            />
+                          </div>
+                        ))}
+                      </div>
+                      {komoditas.galeri.length > 4 && (
+                        <button
+                          className={`mt-4 flex items-center space-x-2 ${colors.text} hover:translate-x-1 transition-all duration-200 font-medium`}
+                        >
+                          <span>
+                            Lihat {komoditas.galeri.length - 4} foto lainnya
+                          </span>
+                          <ArrowRight className="w-4 h-4" />
+                        </button>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="text-center py-12 bg-gradient-to-br from-[#F7F4ED] to-white rounded-2xl border border-[#2A6218]/10">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-[#2A6218]/10 rounded-2xl flex items-center justify-center">
+                        <Eye className="w-8 h-8 text-[#65724D]" />
+                      </div>
+                      <p className="text-[#3F5231] font-medium mb-1">
+                        Galeri Segera Hadir
+                      </p>
+                      <p className="text-[#65724D] text-sm">
+                        Foto produk akan ditambahkan
+                      </p>
+                    </div>
+                  )}
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  Ut enim ad minima veniam, quis nostrum exercitationem ullam
-                  corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                  consequatur? Quis autem vel eum iure reprehenderit qui in ea
-                  voluptate velit esse quam nihil molestiae consequatur.
-                </p>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  But I must explain to you how all this mistaken idea of
-                  denouncing pleasure and praising pain was born and I will give
-                  you a complete account of the system, and expound the actual
-                  teachings of the great explorer of the truth.
-                </p>
               </div>
-              <div className="relative lg:order-2">
-                <div className="absolute -inset-4 bg-gradient-to-r from-[#4A7C59] to-[#2A6218] rounded-3xl opacity-20 blur-lg"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80"
-                  alt="Masa Kini"
-                  className="relative w-full h-64 lg:h-80 object-cover rounded-2xl shadow-2xl"
-                />
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Gallery Modal */}
+      {selectedGallery && (
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="relative max-w-5xl w-full">
+            <button
+              onClick={() => setSelectedGallery(null)}
+              className="absolute -top-16 right-0 text-white hover:text-gray-300 transition-colors bg-white/10 backdrop-blur-sm rounded-full p-3"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="bg-white rounded-3xl overflow-hidden shadow-2xl">
+              <img
+                src={selectedGallery.images[selectedGallery.index]}
+                alt={`${selectedGallery.komoditas} gallery`}
+                className="w-full h-auto max-h-[70vh] object-contain"
+              />
+              <div className="p-6 bg-gradient-to-r from-[#F7F4ED] to-white">
+                <h3 className="text-xl font-bold text-[#3F5231] mb-2">
+                  {selectedGallery.komoditas}
+                </h3>
+                <p className="text-[#65724D]">
+                  Foto {selectedGallery.index + 1} dari{" "}
+                  {selectedGallery.images.length}
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      )}
 
-      {/* Closing Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-r from-[#2A6218] to-[#4A7C59]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 lg:p-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Melangkah Menuju Masa Depan
-            </h2>
-            <p className="text-xl text-white/90 leading-relaxed">
-              Dengan semangat gotong royong dan kearifan lokal yang telah teruji
-              waktu, Desa Surjo terus melangkah maju membangun masa depan yang
-              lebih baik untuk generasi mendatang.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      {/* Footer Placeholder */}
       <Footer />
     </div>
   );

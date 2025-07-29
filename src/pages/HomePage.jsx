@@ -4,6 +4,7 @@ import Hero from "../components/Hero";
 import { Target, Eye, CheckCircle, Users } from "lucide-react";
 import AboutSurjo from "../components/AboutSurjo";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -14,7 +15,16 @@ const HomePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F7F4ED]">
+    <motion.div
+      className="min-h-screen bg-[#F7F4ED]"
+      initial={{ opacity: 0, y: 50, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      exit={{ opacity: 0, y: -0, scale: 0.98 }}
+      transition={{
+        duration: 0.5,
+        ease: [0.4, 0.0, 0.2, 1],
+      }}
+    >
       <Header />
 
       {/* Hero Section */}
@@ -186,19 +196,12 @@ const HomePage = () => {
                 onClick={() => handleNavigation("/sejarah")}
               >
                 <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#3F5231] flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                    />
-                  </svg>
+                  <img
+                    src="https://i.pinimg.com/736x/c6/75/52/c6755269c6ad9ac1f6fd76ed74ec4b6c.jpg"
+                    loading="lazy"
+                    alt="Sejarah"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
@@ -220,19 +223,12 @@ const HomePage = () => {
                 onClick={() => handleNavigation("/potensi")}
               >
                 <div className="h-48 bg-gradient-to-br from-[#2A6218] to-[#65724D] flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-                    />
-                  </svg>
+                  <img
+                    src="https://i.pinimg.com/736x/ee/08/ca/ee08ca9809d8f76bb42503428c0b7a5a.jpg"
+                    loading="lazy"
+                    alt="Potensi"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
@@ -254,19 +250,12 @@ const HomePage = () => {
                 onClick={() => handleNavigation("/budaya")}
               >
                 <div className="h-48 bg-gradient-to-br from-[#3F5231] to-[#2A6218] flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                    />
-                  </svg>
+                  <img
+                    src="https://i.pinimg.com/736x/ee/08/ca/ee08ca9809d8f76bb42503428c0b7a5a.jpg"
+                    loading="lazy"
+                    alt="Potensi"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
@@ -288,19 +277,12 @@ const HomePage = () => {
                 onClick={() => handleNavigation("/umkm")}
               >
                 <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#2A6218] flex items-center justify-center">
-                  <svg
-                    className="w-16 h-16 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                    />
-                  </svg>
+                  <img
+                    src="https://cdn.rri.co.id/berita/Jakarta/o/1729854463470-d0bd99163261318d5675e320af42c52d/n07c8yns8hqgivp.jpeg"
+                    loading="lazy"
+                    alt="Potensi"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
@@ -321,7 +303,7 @@ const HomePage = () => {
       </main>
 
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

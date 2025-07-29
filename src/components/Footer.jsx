@@ -1,10 +1,11 @@
-import { Instagram, Youtube, MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { FaInstagram, FaYoutube, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   const quickLinks = [
     { label: "Beranda", href: "#" },
-    { label: "Tentang Desa", href: "#" },
-    { label: "Berita", href: "#" },
+    { label: "Budaya", href: "/budaya" },
+    { label: "UMKM", href: "/umkm" },
     { label: "Layanan", href: "#" },
   ];
 
@@ -65,7 +66,7 @@ const Footer = () => {
                 aria-label="Instagram Desa Surjo"
                 className="group relative w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 transition-all duration-300 transform hover:scale-110"
               >
-                <Instagram className="w-6 h-6 text-white transition-colors" />
+                <FaInstagram className="w-6 h-6 text-white transition-colors" />
               </a>
               <a
                 href="https://youtube.com/@desasurjo"
@@ -74,7 +75,16 @@ const Footer = () => {
                 aria-label="YouTube Desa Surjo"
                 className="group relative w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-gradient-to-r hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-110"
               >
-                <Youtube className="w-6 h-6 text-white transition-colors" />
+                <FaYoutube className="w-6 h-6 text-white transition-colors" />
+              </a>
+              <a
+                href="https://github.com/ProfDian"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube Desa Surjo"
+                className="group relative w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-gradient-to-r hover:from-white-500 hover:to-white-600 transition-all duration-300 transform hover:scale-110"
+              >
+                <FaGithub className="w-6 h-6 text-white transition-colors" />
               </a>
             </div>
           </div>
@@ -153,13 +163,45 @@ const Footer = () => {
 
         {/* Bottom Section */}
         <div className="relative mt-16 pt-8">
+          {/* Decorative separator line */}
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#65724D] to-transparent"></div>
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
-            <p className="text-gray-300">
-              © 2025 Desa Surjo. Semua hak dilindungi undang-undang.
-            </p>
-            <div className="text-gray-400">Dibuat Untuk Masyarakat</div>
+
+          {/* KKN Identity Image */}
+          <div className="flex justify-center mb-8">
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-[#2A6218] via-[#7FB069] to-[#2A6218] rounded-2xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
+                <img
+                  src="/identitas KKN.jpg"
+                  alt="KKNT IDBU 71 - Desa Surjo, Kabupaten Batang"
+                  className="h-20 w-auto object-contain filter brightness-110 hover:brightness-125 transition-all duration-300"
+                />
+              </div>
+            </div>
           </div>
+
+          {/* Copyright and credits */}
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+              <p className="text-gray-300">
+                © 2025 Desa Surjo. Semua hak dilindungi undang-undang.
+              </p>
+              <div className="hidden md:block w-1 h-1 bg-gray-500 rounded-full"></div>
+              <p className="text-gray-400 text-xs">
+                Dikembangkan dengan ❤️ untuk kemajuan desa
+              </p>
+            </div>
+
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-[#7FB069] rounded-full animate-pulse"></div>
+              <span className="text-gray-400 text-xs font-medium">
+                Dibuat Untuk Masyarakat
+              </span>
+            </div>
+          </div>
+
+          {/* Subtle bottom decoration */}
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-px bg-gradient-to-r from-transparent via-[#7FB069] to-transparent opacity-50"></div>
         </div>
       </div>
     </footer>

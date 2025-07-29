@@ -1,6 +1,10 @@
 //make about page
-import React from "react";
+
 
 export default function About() {
-  return <div>About</div>;
+  return (
+    <div className="min-h-screen bg-[#F7F4ED] overflow-auto">
+      <AboutSurjo />
+    </div>
+  );
 }

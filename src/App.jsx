@@ -7,7 +7,6 @@ import {
 import { AnimatePresence } from "framer-motion";
 
 import HomePage from "./pages/HomePage";
-import About from "./pages/About";
 import Sejarah from "./pages/Sejarah";
 import UMKM from "./pages/UMKM";
 import Potensi from "./pages/Potensi";
@@ -22,7 +21,6 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<About />} />
         <Route path="/sejarah" element={<Sejarah />} />
         <Route path="/umkm" element={<UMKM />} />
         <Route path="/potensi" element={<Potensi />} />

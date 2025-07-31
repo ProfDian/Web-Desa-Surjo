@@ -116,7 +116,6 @@ const UMKMPage = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#F7F4ED]">
-        <Header />
         <div className="flex items-center justify-center min-h-[60vh]">
           <div className="text-center">
             <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-[#2A6218] mx-auto mb-4"></div>
@@ -125,7 +124,6 @@ const UMKMPage = () => {
             </p>
           </div>
         </div>
-        <Footer />
       </div>
     );
   }

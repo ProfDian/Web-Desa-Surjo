@@ -33,18 +33,20 @@ const Footer = () => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2260%22%20height%3D%2260%22%20viewBox%3D%220%200%2060%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cg%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%3E%3Cg%20fill%3D%22%23ffffff%22%20fill-opacity%3D%220.1%22%3E%3Cpath%20d%3D%22M30%2030c0%2016.569%2013.431%2030%2030%2030v-30H30z%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E')]"></div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-[#2A6218] to-transparent rounded-full blur-3xl opacity-30 -translate-x-16 -translate-y-16"></div>
-      <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-tl from-[#65724D] to-transparent rounded-full blur-3xl opacity-20 translate-x-20 translate-y-20"></div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex items-center mb-6">
               <div className="relative flex-shrink-0">
-                <div className="w-14 h-14 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-2xl flex items-center justify-center shadow-xl">
-                  <span className="text-white font-bold text-lg">DS</span>
+                <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md rounded-xl p-1.5 sm:p-2 border border-white/20 group-hover:border-emerald-400/40 transition-all duration-500 shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-lime-400/5 rounded-xl"></div>
+                  <img
+                    src="FEED KKN .png"
+                    loading="lazy"
+                    alt="KKNT IDBU 71 Universitas Diponegoro - Desa Surjo"
+                    className="relative h-8 w-auto sm:h-10 lg:h-12 object-contain filter brightness-110 group-hover:brightness-125 transition-all duration-500"
+                  />
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#7FB069] rounded-full animate-pulse"></div>
               </div>
@@ -53,8 +55,7 @@ const Footer = () => {
               </h3>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Desa yang kaya akan budaya, tradisi, dan potensi alam yang
-              memukau.
+              im fking tired of all this sht
             </p>
 
             {/* Social Media */}
@@ -166,20 +167,6 @@ const Footer = () => {
           {/* Decorative separator line */}
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#65724D] to-transparent"></div>
 
-          {/* KKN Identity Image */}
-          <div className="flex justify-center mb-8">
-            <div className="relative group">
-              <div className="absolute -inset-2 bg-gradient-to-r from-[#2A6218] via-[#7FB069] to-[#2A6218] rounded-2xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity duration-300"></div>
-              <div className="relative bg-white/10 backdrop-blur-sm rounded-xl p-4 border border-white/20">
-                <img
-                  src="/identitas KKN.jpg"
-                  alt="KKNT IDBU 71 - Desa Surjo, Kabupaten Batang"
-                  className="h-20 w-auto object-contain filter brightness-110 hover:brightness-125 transition-all duration-300"
-                />
-              </div>
-            </div>
-          </div>
-
           {/* Copyright and credits */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-sm">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
@@ -188,7 +175,7 @@ const Footer = () => {
               </p>
               <div className="hidden md:block w-1 h-1 bg-gray-500 rounded-full"></div>
               <p className="text-gray-400 text-xs">
-                Dikembangkan dengan ❤️ untuk kemajuan desa
+                Dikembangkan dengan ❤️ untuk kemajuan detasa
               </p>
             </div>
 

@@ -11,6 +11,7 @@ import Sejarah from "./pages/Sejarah";
 import UMKM from "./pages/UMKM";
 import Potensi from "./pages/Potensi";
 import Budaya from "./pages/Budaya";
+import Wisata from "./pages/Wisata";
 
 import "./App.css";
 
@@ -25,6 +26,7 @@ function AnimatedRoutes() {
         <Route path="/umkm" element={<UMKM />} />
         <Route path="/potensi" element={<Potensi />} />
         <Route path="/budaya" element={<Budaya />} />
+        <Route path="/wisata" element={<Wisata />} />
       </Routes>
     </AnimatePresence>
   );

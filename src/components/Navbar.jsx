@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Beranda", href: "#beranda" },
-  { name: "Tentang", href: "#tentang" },
+  { name: "Wisata", href: "#wisata" },
   { name: "Sejarah", href: "#sejarah" },
   { name: "Potensi", href: "#potensi" },
   { name: "Budaya", href: "#budaya" },

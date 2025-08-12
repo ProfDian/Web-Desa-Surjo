@@ -3,11 +3,11 @@ import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Beranda", href: "/" },
-  { name: "Tentang", href: "/about" },
-  { name: "Sejarah", href: "sejarah" },
-  { name: "Potensi", href: "potensi" },
-  { name: "Budaya", href: "budaya" },
-  { name: "UMKM", href: "umkm" },
+  { name: "Wisata", href: "/wisata" },
+  { name: "Sejarah", href: "/sejarah" },
+  { name: "Potensi", href: "/potensi" },
+  { name: "Budaya", href: "/budaya" },
+  { name: "UMKM", href: "/umkm" },
 ];
 
 export default function Header() {

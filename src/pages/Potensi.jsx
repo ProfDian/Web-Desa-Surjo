@@ -17,7 +17,6 @@ import {
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { motion } from "framer-motion";
 
 const Potensi = () => {
   const [potensiData, setPotensiData] = useState(null);

@@ -1,33 +1,27 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { Home, ChevronRight } from "lucide-react";
 
 const Budaya = () => {
-  const navigate = (url) => {
-    window.location.href = url;
-  };
+  const navigate = () => {}; // Mock navigate function
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F7F4ED] to-[#E8F5E8]">
       <Header />
 
-      {/* Enhanced Breadcrumb - Match UMKM, Sejarah, Potensi */}
-      <section className="relative bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#4A7C59] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-4 pt-24 pb-4">
-          <nav className="flex items-center justify-center space-x-2 text-sm mb-4 opacity-90">
-            <button
-              onClick={() => navigate("/")}
-              className="flex items-center hover:text-[#F7F4ED] transition-colors duration-200"
-            >
-              <Home className="w-4 h-4 mr-1" />
-              Beranda
-            </button>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#F7F4ED] font-medium">Budaya Desa Surjo</span>
-          </nav>
-        </div>
-      </section>
+      {/* Breadcrumb - Added proper spacing from header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-6">
+        <nav className="text-sm text-[#3F5231] font-medium flex items-center space-x-2">
+          <button
+            onClick={() => navigate("/")}
+            className="hover:underline hover:text-[#2A6218] focus:outline-none bg-transparent border-none p-0 m-0 text-inherit cursor-pointer transition-colors"
+            style={{ background: "none" }}
+          >
+            Home
+          </button>
+          <span>/</span>
+          <span>Budaya Desa Surjo</span>
+        </nav>
+      </div>
 
       {/* Hero Section - Reduced top padding since breadcrumb now has proper spacing */}
       <section className="relative py-8 lg:py-16 overflow-hidden">

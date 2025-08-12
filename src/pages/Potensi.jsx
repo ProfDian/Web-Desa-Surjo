@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import {
   ChevronDown,
   ChevronUp,
@@ -14,8 +14,6 @@ import {
   ArrowRight,
   Play,
   Sparkles,
-  Home,
-  ChevronRight,
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -132,22 +130,8 @@ const Potensi = () => {
 
   return (
     <div className="min-h-screen bg-[#F7F4ED]">
+      {/* Header Placeholder */}
       <Header />
-
-      {/* Enhanced Breadcrumb - Match UMKM & Sejarah */}
-      <section className="relative bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#65724D] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="relative container mx-auto px-4 pt-24 pb-4">
-          <nav className="flex items-center justify-center space-x-2 text-sm mb-4 opacity-90">
-            <a href="/" className="flex items-center hover:text-[#F7F4ED] transition-colors duration-200">
-              <Home className="w-4 h-4 mr-1" />
-              Beranda
-            </a>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#F7F4ED] font-medium">Potensi Desa Surjo</span>
-          </nav>
-        </div>
-      </section>
 
       {/* Hero Section */}
       <div className="relative overflow-hidden pt-4 lg:pt-8">

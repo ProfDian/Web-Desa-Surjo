@@ -224,7 +224,7 @@ const HomePage = () => {
               >
                 <div className="h-48 bg-gradient-to-br from-[#2A6218] to-[#65724D] flex items-center justify-center">
                   <img
-                    src="https://i.pinimg.com/736x/ee/08/ca/ee08ca9809d8f76bb42503428c0b7a5a.jpg"
+                    src="/Desa Surjo.jpg"
                     loading="lazy"
                     alt="Potensi"
                     className="w-full h-full object-cover"

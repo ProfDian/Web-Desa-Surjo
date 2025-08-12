@@ -316,13 +316,11 @@ const UMKMCard = ({ umkm, viewMode, onImageClick }) => {
 
         {/* Enhanced Location & Maps */}
         <div className="border-t border-[#65724D]/20 pt-6 mt-auto">
-          <div className="flex items-start gap-3 mb-4">
-            <div className="p-2 bg-[#2A6218]/10 rounded-full flex-shrink-0 mt-1">
+          <div className="flex items-center gap-2 text-gray-700 font-medium mb-4">
+            <div className="p-2 bg-[#2A6218]/10 rounded-full">
               <MapPin className="w-4 h-4 text-[#2A6218]" />
             </div>
-            <p className="text-gray-700 text-sm leading-relaxed">
-              {umkm.alamat}
-            </p>
+            <span className="text-sm leading-relaxed">{umkm.alamat}</span>
           </div>
           <a
             href={umkm.link_maps}

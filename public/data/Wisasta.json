@@ -1,0 +1,36 @@
+{
+  "pengantar": "Desa Surjo memiliki panorama alam yang memanjakan mata dan menenangkan jiwa. Berada di wilayah perbukitan, desa ini menawarkan pemandangan gunung yang gagah di kejauhan, disertai suasana tenang dengan suara gemericik sungai yang mengalir lembut, menciptakan harmoni alami yang jarang ditemui di perkotaan. \nSelain panorama alam, jalur sungai yang membelah perkebunan dan persawahan menjadi daya tarik tersendiri. Sungai ini berpotensi menjadi destinasi rekreasi ramah lingkungan seperti river tubing dan kafe alam yang memungkinkan pengunjung menikmati keindahan alam sambil bersantai. \nPotensi lainnya adalah wisata kebun kopi. Perkebunan kopi di Desa Surjo dapat menjadi daya tarik wisata agro, di mana pengunjung dapat ikut memetik, menanam, dan merawat pohon kopi, hingga menyaksikan proses pengolahannya. Aktivitas ini tidak hanya bersifat rekreasi tetapi juga edukatif. \nSelain kopi, Desa Surjo memiliki perkebunan teh yang membentang indah. Potensi wisata kebun teh ini dapat dipadukan dengan wisata kebun kopi, memberikan kesempatan bagi pengunjung untuk belajar proses penanaman dan pengolahan teh sambil menikmati pemandangan barisan pohon teh yang rapi dan menyejukkan.",
+  "galeri": [],
+  "rencana_wisata": [
+    {
+      "nama": "Tugu Wisata Desa Surjo",
+      "pengantar": "Tugu ini menjadi simbol identitas desa dengan elemen bata merah yang merepresentasikan budaya Jawa dan sejarah lokal, biji kopi dan daun teh sebagai simbol komoditas unggulan, jendela lengkung berciri khas Belanda, batu alam sebagai simbol kekuatan dan keterikatan masyarakat pada alam, serta signage Desa Surjo yang mencerminkan modernisasi tanpa meninggalkan akar budaya.",
+      "informasi_lain": "soon",
+      "galeri": []
+    },
+    {
+      "nama": "Wisata River Tubing",
+      "pengantar": "",
+      "informasi_lain": "soon",
+      "galeri": []
+    },
+    {
+      "nama": "Wisata River Tubing",
+      "pengantar": "River tubing dirancang sebagai atraksi wisata yang aman, nyaman, dan profesional. Panduan teknis meliputi SOP pelaksanaan, pedoman keselamatan kerja, pembagian peran SDM, dan prosedur mitigasi risiko. Tujuannya adalah memanfaatkan potensi sungai di Desa Surjo sebagai destinasi rekreasi yang berkelanjutan dan meningkatkan kesejahteraan masyarakat setempat.",
+      "informasi_lain": "soon",
+      "galeri": []
+    },
+    {
+      "nama": "Wisata Angkringan",
+      "pengantar": "",
+      "informasi_lain": "soon",
+      "galeri": []
+    },
+    {
+      "nama": "Wisata Glamping",
+      "pengantar": "",
+      "informasi_lain": "soon",
+      "galeri": []
+    }
+  ]
+}

@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Hero, { potensiSlides } from "../components/Hero";
 
 const Potensi = () => {
   const [potensiData, setPotensiData] = useState(null);
@@ -132,120 +133,19 @@ const Potensi = () => {
       {/* Header Placeholder */}
       <Header />
 
-      {/* Hero Section */}
-      <div className="relative overflow-hidden pt-4 lg:pt-8">
-        {/* Background decorations */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-[#2A6218]/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#65724D]/10 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative container mx-auto px-4 py-16 lg:py-24">
-          <div className="max-w-6xl mx-auto">
-            {/* Title section */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 bg-[#2A6218]/10 rounded-full mb-6">
-                <Sparkles className="w-4 h-4 text-[#2A6218] mr-2" />
-                <span className="text-[#3F5231] font-medium text-sm">
-                  Kekayaan Alam Desa
-                </span>
-              </div>
-
-              <h1 className="text-4xl lg:text-7xl font-bold mb-8 leading-tight">
-                <span className="text-[#3F5231]">Potensi</span>
-                <br />
-                <span className="bg-gradient-to-r from-[#2A6218] to-[#65724D] bg-clip-text text-transparent">
-                  Desa Surjo
-                </span>
-              </h1>
-
-              <div className="w-24 h-1.5 bg-gradient-to-r from-[#2A6218] to-[#65724D] mx-auto rounded-full mb-8"></div>
-            </div>
-
-            {/* Introduction content */}
-            <div className="grid lg:grid-cols-12 gap-8 items-center">
-              <div className="lg:col-span-8">
-                <div className="prose prose-lg max-w-none">
-                  <p className="text-[#65724D] leading-relaxed text-lg font-medium mb-6">
-                    {potensiData.pengantar}
-                  </p>
-                </div>
-
-                {/* Stats cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#2A6218]/20">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-[#2A6218]/10 rounded-xl flex items-center justify-center">
-                        <TrendingUp className="w-6 h-6 text-[#2A6218]" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-[#3F5231]">
-                          {potensiData.komoditas_unggulan?.length || 0}
-                        </p>
-                        <p className="text-sm text-[#65724D]">
-                          Komoditas Unggulan
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#2A6218]/20">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-[#65724D]/10 rounded-xl flex items-center justify-center">
-                        <Users className="w-6 h-6 text-[#65724D]" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-[#3F5231]">
-                          100+
-                        </p>
-                        <p className="text-sm text-[#65724D]">
-                          Petani Terlibat
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-[#2A6218]/20">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-12 h-12 bg-[#3F5231]/10 rounded-xl flex items-center justify-center">
-                        <Award className="w-6 h-6 text-[#3F5231]" />
-                      </div>
-                      <div>
-                        <p className="text-2xl font-bold text-[#3F5231]">
-                          Premium
-                        </p>
-                        <p className="text-sm text-[#65724D]">
-                          Kualitas Produk
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-4">
-                <div className="relative">
-                  <div className="aspect-square bg-gradient-to-br from-[#2A6218] to-[#3F5231] rounded-3xl p-8 text-white relative overflow-hidden">
-                    <div className="absolute inset-0 opacity-30">
-                      <div className="absolute top-4 left-4 w-8 h-8 bg-white/20 rounded-full"></div>
-                      <div className="absolute top-16 right-8 w-4 h-4 bg-white/20 rounded-full"></div>
-                      <div className="absolute bottom-8 left-12 w-6 h-6 bg-white/20 rounded-full"></div>
-                    </div>
-                    <div className="relative h-full flex flex-col justify-center text-center">
-                      <MapPin className="w-16 h-16 mx-auto mb-4 opacity-90" />
-                      <h3 className="text-2xl font-bold mb-2">LOREM IPSUM</h3>
-                      <p className="text-white/90 text-sm leading-relaxed">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quisquam, quidem.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Hero
+        mainTitle="Potensi Wisata"
+        highlightTitle="Desa Surjo"
+        staticDescription="Berbagai destinasi menarik yang siap dikunjungi. Dari wisata alam hingga agrowisata, semua tersedia untuk pengalaman yang tak terlupakan."
+        slides={potensiSlides}
+        primaryCTA={{ text: "Lihat Destinasi", href: "/destinasi" }}
+        secondaryCTA={{ text: "Paket Wisata", href: "/paket-wisata" }}
+        announcement={{
+          text: "Temukan keindahan tersembunyi Desa Surjo.",
+          linkText: "Buat itinerary",
+          href: "/itinerary",
+        }}
+      />
 
       {/* Komoditas Section */}
       <div className="container mx-auto px-4 py-20">

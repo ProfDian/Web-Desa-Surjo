@@ -14,6 +14,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import UMKMCard from "../components/UMKMCard";
 import { motion } from "framer-motion";
+import Hero, { umkmSlides } from "../components/Hero";
 
 const UMKMPage = () => {
   const [umkms, setUmkms] = useState([]);
@@ -142,43 +143,17 @@ const UMKMPage = () => {
       }}
     >
       <Header />
-
-      {/* Enhanced Hero Section */}
-      <section className="relative bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#65724D] text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10"></div>
-
-        <div className="relative container mx-auto px-4 py-16 md:py-24">
-          {/* Breadcrumb */}
-          <nav className="flex items-center justify-center space-x-2 text-sm mb-8 opacity-90">
-            <a
-              href="/"
-              className="flex items-center hover:text-[#F7F4ED] transition-colors duration-200"
-            >
-              <Home className="w-4 h-4 mr-1" />
-              Beranda
-            </a>
-            <ChevronRight className="w-4 h-4" />
-            <span className="text-[#F7F4ED] font-medium">UMKM Desa Surjo</span>
-          </nav>
-
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              UMKM Desa
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#F7F4ED] to-yellow-200">
-                Surjo
-              </span>
-            </h1>
-
-            <p className="text-lg md:text-xl text-[#F7F4ED]/90 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Temukan produk lokal berkualitas dari para pengrajin dan petani
-              terbaik di Desa Wisata Surjo. Setiap produk dibuat dengan cinta
-              dan tradisi turun temurun.
-            </p>
-          </div>
-        </div>
-      </section>
-
+      <Hero
+        mainTitle="UMKM"
+        highlightTitle="Desa Surjo"
+        staticDescription="Usaha Mikro Kecil dan Menengah yang menggerakkan perekonomian desa dengan produk berkualitas dan inovasi berkelanjutan."
+        slides={umkmSlides}
+        primaryCTA={{ text: "Lihat Produk", href: "/produk" }}
+        secondaryCTA={{ text: "Hubungi UMKM", href: "/kontak-umkm" }}
+        announcement={{
+          text: "Dukung produk lokal Desa Surjo.",
+        }}
+      />
       {/* Enhanced Filter & Search Section */}
       <section className="bg-white shadow-lg border-b border-[#65724D]/10 sticky top-0 z-40">
         <div className="container mx-auto px-4 py-6">
@@ -252,7 +227,6 @@ const UMKMPage = () => {
           </div>
         </div>
       </section>
-
       {/* Results Info */}
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -270,7 +244,6 @@ const UMKMPage = () => {
           )}
         </div>
       </div>
-
       {/* UMKM Cards using UMKMCard Component */}
       <section className="container mx-auto px-4 pb-16">
         <div
@@ -416,7 +389,6 @@ const UMKMPage = () => {
           </div>
         </div>
       )}
-
       <Footer />
     </motion.div>
   );

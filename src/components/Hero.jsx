@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
-const slides = [
+// Default slides untuk homepage
+const defaultSlides = [
   {
     id: 1,
     image:
@@ -29,7 +30,127 @@ const slides = [
   },
 ];
 
-export default function Hero() {
+// Slides untuk halaman Tentang
+export const tentangSlides = [
+  {
+    id: 1,
+    image:
+      "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg",
+    title: "Sejarah Desa Surjo",
+    description:
+      "Perjalanan panjang pembentukan desa dengan nilai-nilai luhur yang terjaga",
+  },
+  {
+    id: 2,
+    image: "pexels-pixabay-68507.jpg",
+    title: "Visi dan Misi",
+    description:
+      "Cita-cita mulia untuk kemajuan bersama dan kesejahteraan warga",
+  },
+  {
+    id: 3,
+    image: "pexels-pixabay-158063.jpg",
+    title: "Struktur Pemerintahan",
+    description: "Kepemimpinan yang amanah dan melayani kepentingan masyarakat",
+  },
+];
+
+// Slides untuk halaman Budaya
+export const budayaSlides = [
+  {
+    id: 1,
+    image:
+      "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg",
+    title: "Tradisi Gotong Royong",
+    description:
+      "Kearifan lokal yang mengakar dalam kehidupan sehari-hari masyarakat",
+  },
+  {
+    id: 2,
+    image: "pexels-pixabay-68507.jpg",
+    title: "Seni dan Kerajinan",
+    description: "Warisan seni yang diturunkan dari generasi ke generasi",
+  },
+  {
+    id: 3,
+    image: "pexels-pixabay-158063.jpg",
+    title: "Festival dan Upacara",
+    description: "Perayaan budaya yang mempererat hubungan antar warga desa",
+  },
+];
+
+// Slides untuk halaman UMKM
+export const umkmSlides = [
+  {
+    id: 1,
+    image:
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428529/20250722_113747_hreftm.webp",
+    title: "Produk Unggulan",
+    description:
+      "Hasil karya terbaik UMKM lokal yang berkualitas dan berdaya saing",
+  },
+  {
+    id: 2,
+    image:
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428530/IMG-20250716-WA0022_y4knt4.webp",
+    title: "Kerajinan Tangan",
+    description:
+      "Seni kriya yang menunjukkan kreativitas tinggi masyarakat desa",
+  },
+  {
+    id: 3,
+    image:
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428529/20250722_113918_jgs6gb.webp",
+    title: "Industri Rumahan",
+    description:
+      "Usaha mandiri yang menggerakkan ekonomi desa secara berkelanjutan",
+  },
+];
+
+// Slides untuk halaman Potensi
+export const potensiSlides = [
+  {
+    id: 1,
+    image:
+      "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg",
+    title: "Wisata Alam",
+    description:
+      "Keindahan alam yang masih asri dan mempesona setiap pengunjung",
+  },
+  {
+    id: 2,
+    image: "pexels-pixabay-68507.jpg",
+    title: "Agrowisata",
+    description: "Pengalaman langsung bercocok tanam dan berkebun organik",
+  },
+  {
+    id: 3,
+    image: "pexels-pixabay-158063.jpg",
+    title: "Kuliner Khas",
+    description: "Cita rasa autentik makanan tradisional yang menggugah selera",
+  },
+];
+
+export default function Hero({
+  // Props untuk customisasi dengan default values
+  mainTitle = "Selamat Datang di",
+  highlightTitle = "Desa Wisata Surjo",
+  staticDescription = "Desa yang kaya akan budaya, tradisi, dan potensi alam yang memukau. Bergabunglah dengan kami untuk mengenal lebih dekat kehidupan masyarakat Desa Surjo.",
+  slides = defaultSlides,
+  primaryCTA = {
+    text: "Jelajahi Potensi Desa",
+    href: "/potensi",
+  },
+  secondaryCTA = {
+    text: "Pelajari Lebih Lanjut",
+    href: "#tentang",
+  },
+  announcement = {
+    text: "Selamat datang di website resmi Desa Wisata Surjo.",
+    linkText: "Pelajari lebih lanjut",
+    href: "#tentang",
+  },
+}) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -38,7 +159,7 @@ export default function Hero() {
     }, 9000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -92,11 +213,15 @@ export default function Hero() {
       <button
         onClick={prevSlide}
         className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg transition-all z-10"
-      ></button>
+      >
+        ←
+      </button>
       <button
         onClick={nextSlide}
-        className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg transition-all z-10"
-      ></button>
+        className="absolute right-8 top-1/2 transform -translate-x-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg transition-all z-10"
+      >
+        →
+      </button>
 
       {/* Centered Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-6">
@@ -104,21 +229,21 @@ export default function Hero() {
           {/* Announcement banner */}
           <div className="mb-8">
             <div className="inline-block rounded-full px-4 py-2 text-sm text-white/90 bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all">
-              Selamat datang di website resmi Desa Wisata Surjo.{" "}
+              {announcement.text}{" "}
               <a
-                href="#tentang"
+                href={announcement.href}
                 className="font-semibold text-white underline hover:text-white/80"
               >
-                Pelajari lebih lanjut <span aria-hidden="true">&rarr;</span>
+                {announcement.linkText} <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
           </div>
 
-          {/* Main heading */}
+          {/* Main heading - sekarang dinamis */}
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
-            Selamat Datang di{" "}
+            {mainTitle}{" "}
             <span className="text-[#90EE90] drop-shadow-lg">
-              Desa Wisata Surjo
+              {highlightTitle}
             </span>
           </h1>
 
@@ -127,26 +252,24 @@ export default function Hero() {
             {slides[currentSlide].description}
           </p>
 
-          {/* Static description */}
+          {/* Static description - sekarang dinamis */}
           <p className="text-lg text-white/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Desa yang kaya akan budaya, tradisi, dan potensi alam yang memukau.
-            Bergabunglah dengan kami untuk mengenal lebih dekat kehidupan
-            masyarakat Desa Surjo.
+            {staticDescription}
           </p>
 
-          {/* Action buttons */}
+          {/* Action buttons - sekarang dinamis */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
-              href="/potensi"
+              href={primaryCTA.href}
               className="bg-[#2A6218] hover:bg-[#1e4612] text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
             >
-              Jelajahi Potensi Desa
+              {primaryCTA.text}
             </a>
             <a
-              href="#tentang"
+              href={secondaryCTA.href}
               className="text-white hover:text-[#90EE90] text-lg font-semibold border-b-2 border-transparent hover:border-[#90EE90] transition-all"
             >
-              Pelajari Lebih Lanjut <span aria-hidden="true">→</span>
+              {secondaryCTA.text} <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>

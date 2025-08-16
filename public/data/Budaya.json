@@ -2,36 +2,50 @@
   {
     "nama": "Kuntulan",
     "pengantar": "Kuntulan merupakan kesenian tradisional yang menggabungkan unsur pencak silat, musik tradisional seperti rebana, terbang, bedug, dan kendang, serta tari kolosal. Pertunjukan ini biasanya dibawakan oleh barisan laki-laki yang mengenakan seragam mirip pasukan, lengkap dengan ikat kepala dan sabuk, menampilkan gerakan silat yang diiringi lagu sholawatan, qasidah, atau lagu rakyat dengan tabuhan rebana. Kesenian ini berkembang di daerah Jawa Tengah, termasuk Batang, Pekalongan, dan sekitarnya.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336490/Kuntulan_w6hrke.webp"
+    ]
   },
   {
     "nama": "Tongprek",
     "pengantar": " Tongprek adalah kesenian musik perkusi tradisional khas Batang, termasuk Desa Surjo, yang menggunakan alat musik sederhana dari barang bekas. Irama musiknya unik dan menjadi bagian dari identitas budaya masyarakat setempat.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336491/Tongprek_ppjjuh.webp"
+    ]
   },
   {
     "nama": "Kenduri Kopi",
     "pengantar": "Kenduri Kopi merupakan tradisi syukuran sederhana yang diadakan dengan kebiasaan minum kopi bersama. Warga duduk bersama menikmati kopi racikan lokal sambil berbincang atau berdoa, melambangkan persaudaraan, kebersamaan, dan rasa syukur. Tradisi ini juga menjadi sarana promosi kopi lokal sebagai salah satu komoditas unggulan Desa Surjo.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336490/Kopi_qwvawz.webp"
+    ]
   },
   {
     "nama": "Tradisi Haul",
     "pengantar": "Tradisi Haul di Desa Surjo adalah peringatan tahunan untuk mengenang tokoh leluhur desa melalui ziarah makam, pembacaan tahlil, dan doa bersama. Acara ini menjadi momen penting mempererat silaturahmi warga serta berkembang menjadi daya tarik wisata religi, apalagi saat bertepatan dengan tradisi sedekah bumi.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336490/Haul_ftuspl.webp"
+    ]
   },
   {
     "nama": "Kebudayaan Wayangan",
     "pengantar": "Wayang kulit di Desa Surjo menghadirkan kisah epik seperti Mahabharata dan Ramayana dengan ciri khas penggunaan dalang, gamelan, dan sinden. Selain hiburan, wayang juga berfungsi sebagai media pendidikan, dakwah, dan pelestarian nilai budaya.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336491/Wayangan_frh6az.webp"
+    ]
   },
   {
     "nama": "Tradisi Sedekah Bumi",
     "pengantar": " Sedekah Bumi adalah tradisi ungkapan syukur atas nikmat panen dan keselamatan yang diterima. Di Desa Surjo, tradisi ini diisi doa bersama dan kunjungan ke makam leluhur, lebih menekankan pada nilai spiritual dan kebersamaan dibandingkan persembahan hasil bumi.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336490/sedekahbumi_mbazgo.webp"
+    ]
   },
   {
     "nama": "Jaran Eblek",
     "pengantar": "Jaran Eblek adalah seni pertunjukan tradisional menunggang kuda tiruan dari anyaman bambu atau rotan yang diiringi musik gamelan sederhana. Pertunjukan ini memadukan unsur tari, nyanyian, dan gerakan akrobatik ringan, biasanya tampil dalam karnaval desa.",
-    "galeri": []
+    "galeri": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336490/jaraneblek_hebjim.webp"
+    ]
   }
 ]

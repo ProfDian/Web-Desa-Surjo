@@ -10,6 +10,7 @@ import {
   Calendar,
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import Hero, { sejarahSlides } from "../components/Hero";
 
 const Sejarah = () => {
   const navigate = useNavigate();
@@ -53,91 +54,17 @@ const Sejarah = () => {
   return (
     <div className="min-h-screen bg-[#F7F4ED]">
       <Header />
-
-      {/* Enhanced Breadcrumb */}
-      <div className="bg-gradient-to-r from-[#F7F4ED] via-[#E8F5E8] to-[#F7F4ED] border-b border-[#65724D]/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
-          <nav className="flex items-center space-x-2 text-sm font-medium">
-            <button
-              onClick={() => navigate("/")}
-              className="flex items-center text-[#65724D] hover:text-[#2A6218] transition-colors duration-200 group"
-            >
-              <span className="group-hover:underline">Beranda</span>
-            </button>
-            <ChevronRight className="w-4 h-4 text-[#65724D]/50" />
-            <span className="text-[#2A6218] font-semibold">
-              Sejarah Desa Surjo
-            </span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Hero Section - Redesigned */}
-      <section className="relative py-12 lg:py-20 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-[#2A6218] rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute top-32 right-20 w-24 h-24 bg-[#65724D] rounded-full blur-2xl animate-pulse"
-            style={{ animationDelay: "1s" }}
-          ></div>
-          <div
-            className="absolute bottom-20 left-32 w-40 h-40 bg-[#3F5231] rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-          <div
-            className="absolute bottom-10 right-10 w-28 h-28 bg-[#2A6218] rounded-full blur-2xl animate-pulse"
-            style={{ animationDelay: "3s" }}
-          ></div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Title Section */}
-          <div className="text-center mb-16">
-            <div className="inline-block relative mb-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#3F5231] mb-6 tracking-tight leading-tight">
-                Sejarah
-                <span className="block text-[#2A6218] mt-2">Desa Surjo</span>
-              </h1>
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-md h-2 bg-gradient-to-r from-transparent via-[#2A6218] to-transparent opacity-30 blur-sm rounded-full"></div>
-            </div>
-
-            {/* Decorative Divider */}
-            <div className="flex justify-center items-center mb-12">
-              <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-r from-transparent to-[#2A6218]"></div>
-              <div className="w-8 h-8 bg-gradient-to-br from-[#2A6218] to-[#65724D] rounded-full mx-4 shadow-lg flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-              <div className="w-16 sm:w-20 h-0.5 bg-gradient-to-l from-transparent to-[#65724D]"></div>
-            </div>
-
-            {/* Enhanced Introduction */}
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg sm:text-xl md:text-2xl text-[#3F5231] leading-relaxed font-light mb-8">
-                Desa Surjo menyimpan jejak panjang sejarah kolonialisme dan
-                perdagangan di Jawa Tengah
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
-                <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-[#65724D]/10 hover:shadow-lg transition-all duration-300">
-                  <Calendar className="w-8 h-8 text-[#2A6218] mx-auto mb-3" />
-                  <p className="text-[#3F5231] font-semibold">Est. 1884</p>
-                  <p className="text-[#65724D] text-sm">Pasar Tradisional</p>
-                </div>
-                <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-[#65724D]/10 hover:shadow-lg transition-all duration-300">
-                  <MapPin className="w-8 h-8 text-[#2A6218] mx-auto mb-3" />
-                  <p className="text-[#3F5231] font-semibold">Kec. Bawang</p>
-                  <p className="text-[#65724D] text-sm">Kab. Batang</p>
-                </div>
-                <div className="bg-white/50 backdrop-blur-sm rounded-2xl p-6 border border-[#65724D]/10 hover:shadow-lg transition-all duration-300">
-                  <BookOpen className="w-8 h-8 text-[#2A6218] mx-auto mb-3" />
-                  <p className="text-[#3F5231] font-semibold">Pusat Distrik</p>
-                  <p className="text-[#65724D] text-sm">Era Kolonial</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        mainTitle="Sejarah"
+        highlightTitle="Desa Surjo"
+        staticDescription="Usaha Mikro Kecil dan Menengah yang menggerakkan perekonomian Desa Surjo dengan produk berkualitas dan inovasi berkelanjutan."
+        slides={sejarahSlides}
+        primaryCTA={{ text: "Lihat Potensi", href: "#potensi" }}
+        secondaryCTA={{ text: "Hubungi UMKM", href: "/kontak-umkm" }}
+        announcement={{
+          text: "Potensi Mendalam dari Desa Surjo",
+        }}
+      />
 
       {/* Interactive Timeline */}
       <section className="py-16 bg-gradient-to-br from-white to-[#F7F4ED]">

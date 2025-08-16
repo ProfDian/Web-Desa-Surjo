@@ -1,65 +1,26 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Hero, { budayaSlides } from "../components/Hero";
 
 const Budaya = () => {
-  const navigate = () => {}; // Mock navigate function
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#F7F4ED] to-[#E8F5E8]">
       <Header />
-
-      {/* Breadcrumb - Added proper spacing from header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-6">
-        <nav className="text-sm text-[#3F5231] font-medium flex items-center space-x-2">
-          <button
-            onClick={() => navigate("/")}
-            className="hover:underline hover:text-[#2A6218] focus:outline-none bg-transparent border-none p-0 m-0 text-inherit cursor-pointer transition-colors"
-            style={{ background: "none" }}
-          >
-            Home
-          </button>
-          <span>/</span>
-          <span>Budaya Desa Surjo</span>
-        </nav>
-      </div>
-
-      {/* Hero Section - Reduced top padding since breadcrumb now has proper spacing */}
-      <section className="relative py-8 lg:py-16 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-20 w-32 h-32 bg-[#2A6218] rounded-full blur-3xl animate-pulse"></div>
-          <div
-            className="absolute bottom-20 right-20 w-48 h-48 bg-[#4A7C59] rounded-full blur-3xl animate-pulse"
-            style={{ animationDelay: "2s" }}
-          ></div>
-        </div>
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block relative mb-8">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#3F5231] mb-6 tracking-tight">
-                Budaya Desa Surjo
-              </h1>
-              <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-full h-3 bg-gradient-to-r from-transparent via-[#2A6218] to-transparent opacity-20 blur-sm"></div>
-            </div>
-
-            <div className="relative flex justify-center items-center mb-12">
-              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent to-[#2A6218]"></div>
-              <div className="w-8 h-8 bg-gradient-to-br from-[#2A6218] to-[#4A7C59] rounded-full mx-4 shadow-lg flex items-center justify-center">
-                <div className="w-3 h-3 bg-white rounded-full"></div>
-              </div>
-              <div className="w-20 h-0.5 bg-gradient-to-l from-transparent to-[#4A7C59]"></div>
-            </div>
-
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-light">
-              Desa Surjo memiliki kekayaan budaya yang unik dan beragam,
+      <Hero
+        mainTitle="Budaya"
+        highlightTitle="Desa Surjo"
+        staticDescription="              Desa Surjo memiliki kekayaan budaya yang unik dan beragam,
               mencerminkan perpaduan tradisi Jawa dengan pengaruh berbagai etnis
               yang pernah menetap di wilayah ini. Kebudayaan yang hidup dan
               berkembang hingga kini menjadi identitas dan kebanggaan masyarakat
-              Surjo.
-            </p>
-          </div>
-        </div>
-      </section>
+              Surjo."
+        slides={budayaSlides}
+        primaryCTA={{ text: "Lihat Budaya", href: "" }}
+        secondaryCTA={{ text: "Hubungi UMKM", href: "" }}
+        announcement={{
+          text: "Potensi Mendalam dari Desa Surjo",
+        }}
+      />
 
       {/* Main Content */}
       <section className="py-16 lg:py-24">

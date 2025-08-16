@@ -1,0 +1,21 @@
+[
+  {
+    "kategori": "Alam",
+    "nama_wisata": "Curug Surjo",
+    "pengantar_singkat": "Curug Surjo adalah air terjun alami di tengah hutan pinus, cocok untuk wisata keluarga dan pecinta alam.",
+    "lokasi": "Dusun Karangsari, Desa Surjo",
+    "link_maps": "https://maps.app.goo.gl/curugsurjo",
+    "gallery": [
+      "/pexels-francesco-ungaro-2325447.jpg",
+      "/pexels-pixabay-68507.jpg"
+    ]
+  },
+  {
+    "kategori": "Budaya",
+    "nama_wisata": "Festival Surjo",
+    "pengantar_singkat": "Festival tahunan menampilkan kesenian tradisional, kuliner, dan kerajinan lokal.",
+    "lokasi": "Lapangan Desa Surjo",
+    "link_maps": "https://maps.app.goo.gl/festivalsurjo",
+    "gallery": ["/Desa Surjo.jpg"]
+  }
+]

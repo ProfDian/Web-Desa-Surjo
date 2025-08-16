@@ -297,6 +297,31 @@ const HomePage = () => {
                   </span>
                 </div>
               </div>
+              {/* UMKM Card */}
+              <div
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
+                onClick={() => handleNavigation("/umkm")}
+              >
+                <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#2A6218] flex items-center justify-center">
+                  <img
+                    src="https://cdn.rri.co.id/berita/Jakarta/o/1729854463470-d0bd99163261318d5675e320af42c52d/n07c8yns8hqgivp.jpeg"
+                    loading="lazy"
+                    alt="Potensi"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
+                    Objek Wisaata
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Objek wisata yang akan ada di Desa Surjo
+                  </p>
+                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
+                    Lihat UMKM →
+                  </span>
+                </div>
+              </div>
             </div>
           </section>
         </div>

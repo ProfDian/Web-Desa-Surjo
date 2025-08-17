@@ -93,7 +93,7 @@ export const umkmSlides = [
     id: 2,
     image:
       "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753428530/IMG-20250716-WA0022_y4knt4.webp",
-    title: "Kerajinan Tangan",
+    title: "Rumah Makan",
     description:
       "Seni kriya yang menunjukkan kreativitas tinggi masyarakat desa",
   },
@@ -168,8 +168,8 @@ export default function Hero({
     href: "/potensi",
   },
   secondaryCTA = {
-    text: "Pelajari Lebih Lanjut",
-    href: "#tentang",
+    text: "Cari Tahu Rencana Wisata Desa Surjo -->",
+    href: "/wisata",
   },
   announcement = {
     text: "Selamat datang di website resmi Desa Wisata Surjo.",

@@ -107,5 +107,21 @@
     "alamat": "Gondangan, Desa Surjo, Kecamatan Bawang, Kabupaten Batang, Jawa Tengah",
     "link_maps": "https://maps.app.goo.gl/adPAWa3uJehWdJtS9",
     "gallery": ["https://res.cloudinary.com/your-cloudinary-link10.jpg"]
+  },
+  {
+    "jenis": "Rumah Makan",
+    "nama_umkm": "Pondok Makan Gita",
+    "pengantar_singkat": "Rumah Makan Gita hadir sebagai perpaduan cita rasa rumahan dan pelayanan hangat khas desa, berawal dari usaha katering kecil hingga berkembang menjadi dua cabang di Rembah dan Bawang. Mengusung konsep nasi prasmanan dan layanan pesan antar, rumah makan ini dikelola dengan semangat keluarga, memberdayakan anak muda lokal, serta menjadikan kualitas rasa dan keramahan sebagai kunci kepercayaan pelanggan",
+    "pemilik": "Bu Gita",
+    "informasi_kontak": {
+      "wa": "0812-6698-7222",
+      "ig": "rumah_makan_gita2",
+      "fb": null
+    },
+    "alamat": "jl raya bawang, RT.3/RW.1, Gondangan, Surjo, Kec. Bawang, Kabupaten Batang, Jawa Tengah 51274",
+    "link_maps": "https://maps.app.goo.gl/y1MF4Ex3N2L99zAo9",
+    "gallery": [
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755438260/logo_pondok_makan_mbak_gita_ilcfje.png"
+    ]
   }
 ]

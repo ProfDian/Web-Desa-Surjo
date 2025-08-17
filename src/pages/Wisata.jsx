@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/Hero";
 import AnimatedSection from "../Animations/AnimatedSection";
 import WisataCard from "../components/WisataCard";
+import { FaInstagram } from "react-icons/fa";
 
 const Wisata = () => {
   const [wisataData, setWisataData] = useState(null);
@@ -132,21 +133,40 @@ const Wisata = () => {
 
         {/* Call to Action */}
         <AnimatedSection animationType="fadeInUp" delay={800}>
-          <div className="text-center mt-16 bg-gradient-to-r from-[#3F5231] to-[#2A6218] rounded-2xl p-8 md:p-12 text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              Siap Menjelajahi Desa Surjo?
-            </h3>
-            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Rasakan pengalaman tak terlupakan di tengah keindahan alam dan
-              keramahan masyarakat Desa Surjo
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-[#3F5231] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Hubungi Kami
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#3F5231] transition-colors">
-                Lihat Paket Wisata
-              </button>
+          <div className="text-center mt-16 bg-gradient-to-br from-[#3F5231] via-[#2A6218] to-[#1a4a0f] rounded-3xl p-8 md:p-12 text-white shadow-2xl border border-white/10">
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent rounded-3xl"></div>
+
+            <div className="relative z-10">
+              <h3 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-green-100 bg-clip-text text-transparent">
+                Siap Menjelajahi Desa Surjo?
+              </h3>
+              <p className="text-lg md:text-xl mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed">
+                Rasakan pengalaman tak terlupakan di tengah keindahan alam dan
+                keramahan masyarakat Desa Surjo. Temukan pesona wisata alam yang
+                memukau!
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                {/* Instagram Button */}
+                <a
+                  href="https://www.instagram.com/destinasi_surjo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Follow Instagram Desa Surjo"
+                  className="group relative overflow-hidden"
+                >
+                  <div className="flex items-center gap-3 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                    <div className="relative">
+                      <FaInstagram className="w-6 h-6 text-white transition-transform group-hover:rotate-12" />
+                      <div className="absolute inset-0 bg-white/20 rounded-full scale-0 group-hover:scale-150 transition-transform duration-500"></div>
+                    </div>
+                    <span className="text-white">Follow Instagram</span>
+                  </div>
+
+                  {/* Shimmer effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </a>
+              </div>
             </div>
           </div>
         </AnimatedSection>

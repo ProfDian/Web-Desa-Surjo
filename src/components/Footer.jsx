@@ -61,7 +61,7 @@ const Footer = () => {
             {/* Social Media */}
             <div className="flex space-x-4">
               <a
-                href="https://www.instagram.com/pemerintahdesasurjo/"
+                href="https://www.instagram.com/destinasi_surjo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram Desa Surjo"

@@ -58,7 +58,7 @@ const OptionsSection = () => {
     },
     {
       id: 5,
-      title: "Objek Wisata",
+      title: "Rencana Objek Wisata",
       description: "Objek wisata yang akan ada di Desa Surjo",
       image:
         "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755341718/tugu_mfvzla.webp",

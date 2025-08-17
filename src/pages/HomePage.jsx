@@ -3,17 +3,11 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { Target, Eye, CheckCircle, Users } from "lucide-react";
 import AboutSurjo from "../components/AboutSurjo";
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import OptionsSection from "../components/OptionSection";
+import AnimatedSection from "../Animations/AnimatedSection";
 
 const HomePage = () => {
-  const navigate = useNavigate();
-
-  // Handler function untuk navigasi
-  const handleNavigation = (path) => {
-    navigate(path);
-  };
-
   return (
     <motion.div
       className="min-h-screen bg-[#F7F4ED]"
@@ -26,9 +20,10 @@ const HomePage = () => {
       }}
     >
       <Header />
-
       {/* Hero Section */}
-      <Hero />
+      <AnimatedSection animationType="fadeInUp">
+        <Hero />
+      </AnimatedSection>
 
       {/* Main Section */}
       <main className="py-16">
@@ -176,157 +171,9 @@ const HomePage = () => {
               </div>
             </div>
           </section>
-
-          {/* Option Section - Updated */}
-          <section className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#3F5231] mb-4">
-                Jelajahi Desa Surjo
-              </h2>
-              <div className="w-24 h-1 bg-[#2A6218] mx-auto mb-6"></div>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Temukan berbagai aspek menarik dari Desa Surjo melalui
-                pilihan-pilihan berikut
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {/* Sejarah Card */}
-              <div
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
-                onClick={() => handleNavigation("/sejarah")}
-              >
-                <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#3F5231] flex items-center justify-center">
-                  <img
-                    src="https://i.pinimg.com/736x/c6/75/52/c6755269c6ad9ac1f6fd76ed74ec4b6c.jpg"
-                    loading="lazy"
-                    alt="Sejarah"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
-                    Sejarah
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Pelajari perjalanan panjang dan sejarah terbentuknya Desa
-                    Surjo dari masa ke masa.
-                  </p>
-                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
-                    Baca Selengkapnya →
-                  </span>
-                </div>
-              </div>
-
-              {/* Potensi Card */}
-              <div
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
-                onClick={() => handleNavigation("/potensi")}
-              >
-                <div className="h-48 bg-gradient-to-br from-[#2A6218] to-[#65724D] flex items-center justify-center">
-                  <img
-                    src="/Desa Surjo.jpg"
-                    loading="lazy"
-                    alt="Potensi"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
-                    Potensi Desa
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Temukan berbagai potensi unggulan yang dimiliki Desa Surjo
-                    di berbagai sektor.
-                  </p>
-                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
-                    Jelajahi Potensi →
-                  </span>
-                </div>
-              </div>
-
-              {/* Budaya Card */}
-              <div
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
-                onClick={() => handleNavigation("/budaya")}
-              >
-                <div className="h-48 bg-gradient-to-br from-[#3F5231] to-[#2A6218] flex items-center justify-center">
-                  <img
-                    src="https://i.pinimg.com/736x/ee/08/ca/ee08ca9809d8f76bb42503428c0b7a5a.jpg"
-                    loading="lazy"
-                    alt="Potensi"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
-                    Budaya
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Mengenal tradisi, adat istiadat, dan kearifan lokal yang
-                    masih dilestarikan.
-                  </p>
-                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
-                    Pelajari Budaya →
-                  </span>
-                </div>
-              </div>
-
-              {/* UMKM Card */}
-              <div
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
-                onClick={() => handleNavigation("/umkm")}
-              >
-                <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#2A6218] flex items-center justify-center">
-                  <img
-                    src="https://cdn.rri.co.id/berita/Jakarta/o/1729854463470-d0bd99163261318d5675e320af42c52d/n07c8yns8hqgivp.jpeg"
-                    loading="lazy"
-                    alt="Potensi"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
-                    UMKM
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Dukung usaha mikro, kecil, dan menengah yang berkembang di
-                    desa kami.
-                  </p>
-                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
-                    Lihat UMKM →
-                  </span>
-                </div>
-              </div>
-              {/* UMKM Card */}
-              <div
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
-                onClick={() => handleNavigation("/umkm")}
-              >
-                <div className="h-48 bg-gradient-to-br from-[#65724D] to-[#2A6218] flex items-center justify-center">
-                  <img
-                    src="https://cdn.rri.co.id/berita/Jakarta/o/1729854463470-d0bd99163261318d5675e320af42c52d/n07c8yns8hqgivp.jpeg"
-                    loading="lazy"
-                    alt="Potensi"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[#3F5231] mb-2">
-                    Objek Wisaata
-                  </h3>
-                  <p className="text-gray-600 mb-4">
-                    Objek wisata yang akan ada di Desa Surjo
-                  </p>
-                  <span className="text-[#2A6218] hover:text-[#1e4612] font-medium group-hover:underline">
-                    Lihat UMKM →
-                  </span>
-                </div>
-              </div>
-            </div>
-          </section>
+          <OptionsSection />
         </div>
       </main>
-
       <Footer />
     </motion.div>
   );

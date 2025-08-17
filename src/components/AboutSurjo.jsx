@@ -1,3 +1,5 @@
+import AnimatedSection from "../Animations/AnimatedSection";
+
 const AboutSurjo = () => (
   <section id="tentang" className="relative mb-20 px-4 overflow-hidden">
     {/* Background Pattern */}

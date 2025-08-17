@@ -45,10 +45,6 @@ const Potensi = () => {
     setSelectedGallery(galleryData);
   };
 
-  const handleSlideChange = (index) => {
-    console.log("Slide changed to:", index);
-  };
-
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100 flex items-center justify-center">
@@ -123,8 +119,8 @@ const Potensi = () => {
           highlightTitle="Desa Surjo"
           staticDescription="Usaha Mikro Kecil dan Menengah yang menggerakkan perekonomian Desa Surjo dengan produk berkualitas dan inovasi berkelanjutan."
           slides={potensiSlides}
-          primaryCTA={{ text: "Lihat Potensi", href: "#potensi" }}
-          secondaryCTA={{ text: "Hubungi UMKM", href: "/kontak-umkm" }}
+          primaryCTA={{ text: "Baca & Lihat Potensi", href: "#potensi" }}
+          secondaryCTA={{ text: "", href: "" }}
           announcement={{
             text: "Potensi Mendalam dari Desa Surjo",
           }}

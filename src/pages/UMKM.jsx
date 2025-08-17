@@ -148,8 +148,8 @@ const UMKMPage = () => {
         highlightTitle="Desa Surjo"
         staticDescription="Usaha Mikro Kecil dan Menengah yang menggerakkan perekonomian Desa Surjo dengan produk berkualitas dan inovasi berkelanjutan."
         slides={umkmSlides}
-        primaryCTA={{ text: "Lihat Produk", href: "/produk" }}
-        secondaryCTA={{ text: "Hubungi UMKM", href: "/kontak-umkm" }}
+        primaryCTA={{ text: "Lihat Produk UMKM", href: "" }}
+        secondaryCTA={{ text: "" }}
         announcement={{
           text: "Dukung produk lokal Desa Surjo.",
         }}

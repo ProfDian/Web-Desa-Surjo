@@ -1,21 +1,63 @@
-[
-  {
-    "kategori": "Alam",
-    "nama_wisata": "Curug Surjo",
-    "pengantar_singkat": "Curug Surjo adalah air terjun alami di tengah hutan pinus, cocok untuk wisata keluarga dan pecinta alam.",
-    "lokasi": "Dusun Karangsari, Desa Surjo",
-    "link_maps": "https://maps.app.goo.gl/curugsurjo",
-    "gallery": [
-      "/pexels-francesco-ungaro-2325447.jpg",
-      "/pexels-pixabay-68507.jpg"
-    ]
-  },
-  {
-    "kategori": "Budaya",
-    "nama_wisata": "Festival Surjo",
-    "pengantar_singkat": "Festival tahunan menampilkan kesenian tradisional, kuliner, dan kerajinan lokal.",
-    "lokasi": "Lapangan Desa Surjo",
-    "link_maps": "https://maps.app.goo.gl/festivalsurjo",
-    "gallery": ["/Desa Surjo.jpg"]
-  }
-]
+{
+  "pengantar": "Desa Surjo memiliki panorama alam yang memanjakan mata dan menenangkan jiwa. Berada di wilayah perbukitan, desa ini menawarkan pemandangan gunung yang gagah di kejauhan, disertai suasana tenang dengan suara gemericik sungai yang mengalir lembut, menciptakan harmoni alami yang jarang ditemui di perkotaan. \nSelain panorama alam, jalur sungai yang membelah perkebunan dan persawahan menjadi daya tarik tersendiri. Sungai ini berpotensi menjadi destinasi rekreasi ramah lingkungan seperti river tubing dan kafe alam yang memungkinkan pengunjung menikmati keindahan alam sambil bersantai. \nPotensi lainnya adalah wisata kebun kopi. Perkebunan kopi di Desa Surjo dapat menjadi daya tarik wisata agro, di mana pengunjung dapat ikut memetik, menanam, dan merawat pohon kopi, hingga menyaksikan proses pengolahannya. Aktivitas ini tidak hanya bersifat rekreasi tetapi juga edukatif. \nSelain kopi, Desa Surjo memiliki perkebunan teh yang membentang indah. Potensi wisata kebun teh ini dapat dipadukan dengan wisata kebun kopi, memberikan kesempatan bagi pengunjung untuk belajar proses penanaman dan pengolahan teh sambil menikmati pemandangan barisan pohon teh yang rapi dan menyejukkan.",
+  "gallery": [],
+  "rencana_wisata": [
+    {
+      "kategori": "Alam",
+      "nama_wisata": "Tugu Wisata Desa Surjo",
+      "pengantar_singkat": "Tugu ini menjadi simbol identitas desa dengan elemen bata merah yang merepresentasikan budaya Jawa dan sejarah lokal, biji kopi dan daun teh sebagai simbol komoditas unggulan, jendela lengkung berciri khas Belanda, batu alam sebagai simbol kekuatan dan keterikatan masyarakat pada alam, serta signage Desa Surjo yang mencerminkan modernisasi tanpa meninggalkan akar budaya.",
+      "lokasi": "",
+      "link_maps": "",
+      "gallery": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755341718/tugu_mfvzla.webp"
+      ]
+    },
+    {
+      "kategori": "Alam",
+      "nama_wisata": "Wisata River Tubing",
+      "pengantar_singkat": "River tubing dirancang sebagai atraksi wisata yang aman, nyaman, dan profesional. Panduan teknis meliputi SOP pelaksanaan, pedoman keselamatan kerja, pembagian peran SDM, dan prosedur mitigasi risiko. Tujuannya adalah memanfaatkan potensi sungai di Desa Surjo sebagai destinasi rekreasi yang berkelanjutan dan meningkatkan kesejahteraan masyarakat setempat.",
+      "lokasi": "",
+      "link_maps": "",
+      "gallery": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418411/Zonatubing_ol8w6a.webp"
+      ]
+    },
+    {
+      "kategori": "Kuliner",
+      "nama_wisata": "Pondok Makan Gita",
+      "pengantar_singkat": "Rumah Makan Gita hadir sebagai perpaduan cita rasa rumahan dan pelayanan hangat khas desa, berawal dari usaha katering kecil hingga berkembang menjadi dua cabang di Rembah dan Bawang. Mengusung konsep nasi prasmanan dan layanan pesan antar, rumah makan ini dikelola dengan semangat keluarga, memberdayakan anak muda lokal, serta menjadikan kualitas rasa dan keramahan sebagai kunci kepercayaan pelanggan",
+      "lokasi": "Jl Raya Bawang, RT.3/RW.1, Gondangan, Surjo, Kec. Bawang, Kabupaten Batang, Jawa Tengah 51274",
+      "link_maps": "https://maps.app.goo.gl/y1MF4Ex3N2L99zAo9",
+      "gallery": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418410/Gita5_lntkww.webp",
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418410/Gita6_lulye4.webp",
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418410/Gita1_qken5k.webp",
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418410/Gita2_lxpktl.webp",
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418410/Gita3_gjw8tt.webp",
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418411/Gita7_rygkdw.webp",
+        "https://lh3.googleusercontent.com/p/AF1QipMxX1SnhDAHe5PEAzIHq1i8O6eQa2dXW5mC2uxp=w154-h154-p-k-no",
+        "https://lh3.googleusercontent.com/p/AF1QipPgMKlate51ukz-11iWqHFdqYN5CM8mIi-PVwRT=w237-h308-p-k-no"
+      ]
+    },
+    {
+      "kategori": "Kuliner",
+      "nama_wisata": "Angkringan",
+      "pengantar_singkat": "",
+      "lokasi": "",
+      "link_maps": "",
+      "gallery": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418410/angkringanwebp_acuzm4.webp"
+      ]
+    },
+    {
+      "kategori": "Alam",
+      "nama_wisata": "Wisata Glamping",
+      "pengantar_singkat": "",
+      "lokasi": "",
+      "link_maps": "",
+      "gallery": [
+        "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755418411/Glamping_oyqanb.webp"
+      ]
+    }
+  ]
+}

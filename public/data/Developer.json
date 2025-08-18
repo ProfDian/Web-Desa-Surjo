@@ -1,0 +1,64 @@
+[
+  {
+    "nama": "Sajid Nouval",
+    "fakultas": "Sains dan Matematik",
+    "prodi": "Informatika",
+    "angkatan": "2021",
+    "jobdesk": "UI/UX Developer and Data Entry",
+    "socialLinks": [
+      {
+        "platform": "github",
+        "url": "https://github.com/johndoe"
+      },
+      {
+        "platform": "linkedin",
+        "url": "https://linkedin.com/in/johndoe"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/johndoe"
+      }
+    ],
+    "foto": "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755452823/Sajid_Nouval_Informatika_24060122140110_dxohi9.webp"
+  },
+  {
+    "nama": "Abdul Fattah Rahmadiansyah",
+    "fakultas": "Teknik",
+    "prodi": "Teknik Komputer",
+    "angkatan": "2022",
+    "jobdesk": "Frontend Developer",
+    "socialLinks": [
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/janesmith"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://instagram.com/johndoe"
+      },
+      {
+        "platform": "linkedin",
+        "url": "https://linkedin.com/in/janesmith"
+      }
+    ],
+    "foto": "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755454326/Abdul_Fattah_Rahmadiansyah_Tekkom_22_1_rz2try.png"
+  },
+  {
+    "nama": "Khairun Nisa",
+    "fakultas": "Teknik",
+    "prodi": "Teknik Komputer",
+    "angkatan": "2022",
+    "jobdesk": "UI/UX Designer and Content Manager",
+    "socialLinks": [
+      {
+        "platform": "github",
+        "url": "https://github.com/mikejohnson"
+      },
+      {
+        "platform": "linkedin",
+        "url": "https://linkedin.com/in/mikejohnson"
+      }
+    ],
+    "foto": "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755452822/Khairun_Nisa_Teknik_Komputer_22_1_dsnxif.webp"
+  }
+]

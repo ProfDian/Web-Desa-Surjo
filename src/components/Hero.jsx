@@ -157,6 +157,31 @@ export const sejarahSlides = [
   },
 ];
 
+// Slides untuk halaman Potensi
+export const wisataSlides = [
+  {
+    id: 1,
+    image:
+      "https://cdn.pixabay.com/photo/2017/09/04/18/39/coffee-2714970_1280.jpg",
+    title: "A piece of History",
+    description:
+      "Keindahan alam yang masih asri dan mempesona setiap pengunjung",
+  },
+  {
+    id: 2,
+    image:
+      "https://res.cloudinary.com/dovmzvx6b/image/upload/v1753617684/20250712_112344_jkdgbo.webp",
+    title: "Desa Surjo",
+    description: "Pengalaman langsung bercocok tanam dan berkebun organik",
+  },
+  {
+    id: 3,
+    image: "pexels-pixabay-158063.jpg",
+    title: "Kuliner Khas",
+    description: "Our Home",
+  },
+];
+
 export default function Hero({
   // Props untuk customisasi dengan default values
   mainTitle = "Selamat Datang di",

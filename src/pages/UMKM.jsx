@@ -15,6 +15,7 @@ import Footer from "../components/Footer";
 import UMKMCard from "../components/UMKMCard";
 import { motion } from "framer-motion";
 import Hero, { umkmSlides } from "../components/Hero";
+import AnimatedSection from "../Animations/AnimatedSection";
 
 const UMKMPage = () => {
   const [umkms, setUmkms] = useState([]);
@@ -244,8 +245,12 @@ const UMKMPage = () => {
           )}
         </div>
       </div>
+
       {/* UMKM Cards using UMKMCard Component */}
-      <section className="container mx-auto px-4 pb-16">
+      <AnimatedSection
+        animationType="slideInright"
+        className="container mx-auto px-4 pb-16"
+      >
         <div
           className={`${
             viewMode === "grid"
@@ -304,7 +309,7 @@ const UMKMPage = () => {
             </div>
           </div>
         )}
-      </section>
+      </AnimatedSection>
 
       {/* Enhanced Image Modal */}
       {selectedImage && (

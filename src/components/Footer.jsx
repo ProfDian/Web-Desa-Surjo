@@ -54,9 +54,7 @@ const Footer = () => {
                 Desa Surjo
               </h3>
             </div>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              im fking tired of all this sht
-            </p>
+            <p className="text-gray-300 mb-6 leading-relaxed">Sosial Media</p>
 
             {/* Social Media */}
             <div className="flex space-x-4">

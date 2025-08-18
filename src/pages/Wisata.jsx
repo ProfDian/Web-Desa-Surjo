@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Coffee } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import HeroSection from "../components/Hero";
+import Hero, { wisataSlides } from "../components/Hero";
 import AnimatedSection from "../Animations/AnimatedSection";
 import WisataCard from "../components/WisataCard";
 import { FaInstagram } from "react-icons/fa";
@@ -63,7 +63,17 @@ const Wisata = () => {
       <Header />
 
       <AnimatedSection animationType="fadeInUp">
-        <HeroSection {...heroProps} />
+        <Hero
+          mainTitle="Rencana Wisata"
+          highlightTitle="Desa Surjo"
+          staticDescription="Rencana Wisata yang akan segera hadir di Desa Surjo."
+          slides={wisataSlides}
+          primaryCTA={{ text: "Lihat Rencana Wisata Desa Surjo", href: "" }}
+          secondaryCTA={{ text: "", href: "" }}
+          announcement={{
+            text: "Cerita Kita",
+          }}
+        />
       </AnimatedSection>
 
       <div className="container mx-auto px-4 py-16 max-w-7xl">

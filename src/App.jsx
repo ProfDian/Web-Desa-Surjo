@@ -12,6 +12,7 @@ import UMKM from "./pages/UMKM";
 import Potensi from "./pages/Potensi";
 import Budaya from "./pages/Budaya";
 import Wisata from "./pages/Wisata";
+import Tentang from "./pages/Tentang";
 
 import "./App.css";
 
@@ -27,6 +28,7 @@ function AnimatedRoutes() {
         <Route path="/potensi" element={<Potensi />} />
         <Route path="/budaya" element={<Budaya />} />
         <Route path="/wisata" element={<Wisata />} />
+        <Route path="/tentang" element={<Tentang />} />
       </Routes>
     </AnimatePresence>
   );

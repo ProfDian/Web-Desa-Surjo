@@ -209,192 +209,189 @@ const WisataCard = ({ wisata = {} }) => {
         </div>
       </div>
 
-      {/* PROPER POPUP MODAL DI TENGAH LAYAR */}
+      {/* MODAL POPUP TENGAH LAYAR - DIPERBAIKI */}
       {showModal && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-70 backdrop-blur-sm flex items-center justify-center p-4 z-[9999] transition-all duration-300"
-          onClick={() => setShowModal(false)}
-          style={{ margin: 0, padding: 0 }}
-        >
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-[9999] overflow-y-auto">
           <div
-            className="bg-white rounded-3xl w-full max-w-2xl max-h-[85vh] overflow-y-auto shadow-2xl transform transition-all duration-300 scale-100 mx-auto my-auto relative"
+            className="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden shadow-2xl transform scale-100 my-auto"
             onClick={(e) => e.stopPropagation()}
-            style={{
-              position: "relative",
-              top: "auto",
-              left: "auto",
-              transform: "none",
-            }}
           >
-            {/* Modal Header - CENTERED POPUP STYLE */}
-            <div className="sticky top-0 bg-gradient-to-r from-[#3F5231] to-[#2A6218] text-white p-4 rounded-t-3xl shadow-lg relative">
+            {/* Modal Header */}
+            <div className="sticky top-0 bg-gradient-to-r from-[#3F5231] to-[#2A6218] text-white p-4 flex items-center justify-between z-10">
+              <div className="flex items-center gap-3">
+                <div
+                  className={`p-2 rounded-lg ${getCategoryColor(
+                    wisata.kategori
+                  )} bg-white/20`}
+                >
+                  {getCategoryIcon(wisata.kategori)}
+                </div>
+                <div>
+                  <div className="text-xs opacity-80 uppercase tracking-wide">
+                    {wisata.kategori || "Wisata"}
+                  </div>
+                  <h2 className="text-lg font-bold">
+                    {wisata.nama_wisata || "Destinasi Wisata"}
+                  </h2>
+                </div>
+              </div>
               <button
                 onClick={() => setShowModal(false)}
-                className="absolute top-3 right-3 p-2 hover:bg-white hover:bg-opacity-20 rounded-full transition-colors group z-10"
+                className="p-2 hover:bg-white/20 rounded-full transition-colors"
               >
-                <X className="w-5 h-5 text-white group-hover:text-gray-200" />
+                <X className="w-6 h-6" />
               </button>
-
-              <div className="text-center pr-12">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-white bg-opacity-20 backdrop-blur-sm border border-white border-opacity-30 mb-3">
-                  {getCategoryIcon(wisata.kategori)}
-                  {wisata.kategori || "Wisata"}
-                </div>
-                <h2 className="text-xl font-bold leading-tight">
-                  {wisata.nama_wisata || "Destinasi Wisata"}
-                </h2>
-              </div>
             </div>
 
-            {/* Modal Content - COMPACT POPUP LAYOUT */}
-            <div className="p-4 space-y-4">
-              {/* Image Gallery - COMPACT */}
-              <div className="relative">
-                <div className="relative h-48 bg-gradient-to-br from-[#65724D] to-[#3F5231] rounded-xl overflow-hidden shadow-lg">
-                  {hasGallery ? (
-                    <img
-                      src={wisata.gallery[currentImageIndex]}
-                      alt={wisata.nama_wisata}
-                      className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
-                      onClick={() => openGallery(currentImageIndex)}
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <Camera className="w-12 h-12 mx-auto mb-2 opacity-60" />
-                        <p className="text-sm font-medium opacity-80">
-                          Foto Segera Hadir
-                        </p>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Navigation for multiple images - COMPACT */}
-                  {hasGallery && wisata.gallery.length > 1 && (
-                    <>
-                      <button
-                        onClick={prevImage}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-2 rounded-full transition-all hover:scale-110"
-                      >
-                        <ChevronLeft className="w-4 h-4" />
-                      </button>
-                      <button
-                        onClick={nextImage}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-2 rounded-full transition-all hover:scale-110"
-                      >
-                        <ChevronRight className="w-4 h-4" />
-                      </button>
-
-                      {/* Image counter */}
-                      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 bg-black bg-opacity-70 text-white px-2 py-1 rounded-full text-xs">
-                        {currentImageIndex + 1} / {wisata.gallery.length}
-                      </div>
-                    </>
-                  )}
-                </div>
-
-                {/* Gallery thumbnails - COMPACT */}
-                {hasGallery && wisata.gallery.length > 1 && (
-                  <div className="flex gap-2 mt-3 overflow-x-auto pb-2">
-                    {wisata.gallery.slice(0, 6).map((image, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden border-2 transition-all ${
-                          currentImageIndex === index
-                            ? "border-[#2A6218] scale-105"
-                            : "border-gray-300 hover:border-[#65724D]"
-                        }`}
-                      >
-                        <img
-                          src={image}
-                          alt={`${wisata.nama_wisata} ${index + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
-                    {wisata.gallery.length > 6 && (
-                      <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gray-200 flex items-center justify-center text-xs text-gray-600">
-                        +{wisata.gallery.length - 6}
+            {/* Modal Content - Scrollable */}
+            <div className="overflow-y-auto max-h-[calc(90vh-80px)]">
+              <div className="p-6 space-y-6">
+                {/* Image Gallery */}
+                <div className="relative">
+                  <div className="relative h-64 sm:h-80 bg-gradient-to-br from-[#65724D] to-[#3F5231] rounded-xl overflow-hidden shadow-lg">
+                    {hasGallery ? (
+                      <img
+                        src={wisata.gallery[currentImageIndex]}
+                        alt={wisata.nama_wisata}
+                        className="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300"
+                        onClick={() => openGallery(currentImageIndex)}
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <div className="text-center text-white">
+                          <Camera className="w-16 h-16 mx-auto mb-3 opacity-60" />
+                          <p className="text-lg font-medium opacity-80">
+                            Foto Segera Hadir
+                          </p>
+                        </div>
                       </div>
                     )}
-                  </div>
-                )}
-              </div>
 
-              {/* Description - COMPACT */}
-              <div className="bg-gray-50 p-4 rounded-xl">
-                <h3 className="text-lg font-bold text-[#3F5231] mb-2 flex items-center gap-2">
-                  <Info className="w-4 h-4" />
-                  Deskripsi
-                </h3>
-                <p className="text-gray-700 leading-relaxed text-sm">
-                  {wisata.pengantar_singkat ||
-                    "Informasi detail destinasi wisata ini akan segera tersedia. Nantikan update terbaru dari kami!"}
-                </p>
-              </div>
+                    {/* Navigation for multiple images */}
+                    {hasGallery && wisata.gallery.length > 1 && (
+                      <>
+                        <button
+                          onClick={prevImage}
+                          className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all hover:scale-110"
+                        >
+                          <ChevronLeft className="w-5 h-5" />
+                        </button>
+                        <button
+                          onClick={nextImage}
+                          className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all hover:scale-110"
+                        >
+                          <ChevronRight className="w-5 h-5" />
+                        </button>
 
-              {/* Location Information - COMPACT */}
-              {hasValidLocation && (
-                <div className="bg-green-50 p-4 rounded-xl">
-                  <h3 className="text-lg font-bold text-[#3F5231] mb-2 flex items-center gap-2">
-                    <MapPin className="w-4 h-4" />
-                    Lokasi
-                  </h3>
-                  <div className="flex items-start gap-2 text-gray-700">
-                    <MapPin className="w-4 h-4 text-[#2A6218] mt-0.5 flex-shrink-0" />
-                    <span className="text-sm leading-relaxed">
-                      {wisata.lokasi}
-                    </span>
+                        {/* Image counter */}
+                        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/70 text-white px-3 py-1 rounded-full text-sm">
+                          {currentImageIndex + 1} / {wisata.gallery.length}
+                        </div>
+                      </>
+                    )}
                   </div>
+
+                  {/* Gallery thumbnails */}
+                  {hasGallery && wisata.gallery.length > 1 && (
+                    <div className="flex gap-3 mt-4 overflow-x-auto pb-2">
+                      {wisata.gallery.slice(0, 8).map((image, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setCurrentImageIndex(index)}
+                          className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                            currentImageIndex === index
+                              ? "border-[#2A6218] scale-105 shadow-lg"
+                              : "border-gray-300 hover:border-[#65724D] opacity-70 hover:opacity-100"
+                          }`}
+                        >
+                          <img
+                            src={image}
+                            alt={`${wisata.nama_wisata} ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                      {wisata.gallery.length > 8 && (
+                        <div className="flex-shrink-0 w-16 h-16 rounded-lg bg-gray-200 flex items-center justify-center text-xs text-gray-600 font-medium">
+                          +{wisata.gallery.length - 8}
+                        </div>
+                      )}
+                    </div>
+                  )}
                 </div>
-              )}
 
-              {/* Action Buttons - COMPACT */}
-              <div className="flex gap-3 pt-2">
-                {hasValidMaps ? (
-                  <a
-                    href={wisata.link_maps}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 bg-[#2A6218] text-white px-4 py-3 rounded-xl hover:bg-[#3F5231] transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-sm hover:scale-105 active:scale-95 shadow-lg"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    Buka Maps
-                  </a>
-                ) : (
-                  <button
-                    disabled
-                    className="flex-1 bg-gray-100 text-gray-400 px-4 py-3 rounded-xl cursor-not-allowed flex items-center justify-center gap-2 font-semibold text-sm border border-gray-200"
-                  >
-                    <MapPin className="w-4 h-4" />
-                    Maps Segera
-                  </button>
+                {/* Description */}
+                <div className="bg-gray-50 p-6 rounded-xl">
+                  <h3 className="text-xl font-bold text-[#3F5231] mb-4 flex items-center gap-2">
+                    <Info className="w-5 h-5" />
+                    Deskripsi
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {wisata.pengantar_singkat ||
+                      "Informasi detail destinasi wisata ini akan segera tersedia. Nantikan update terbaru dari kami!"}
+                  </p>
+                </div>
+
+                {/* Location Information */}
+                {hasValidLocation && (
+                  <div className="bg-green-50 p-6 rounded-xl">
+                    <h3 className="text-xl font-bold text-[#3F5231] mb-4 flex items-center gap-2">
+                      <MapPin className="w-5 h-5" />
+                      Lokasi
+                    </h3>
+                    <div className="flex items-start gap-3 text-gray-700">
+                      <MapPin className="w-5 h-5 text-[#2A6218] mt-1 flex-shrink-0" />
+                      <span className="leading-relaxed">{wisata.lokasi}</span>
+                    </div>
+                  </div>
                 )}
 
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="px-6 py-3 border-2 border-[#65724D] text-[#65724D] rounded-xl hover:bg-[#65724D] hover:text-white transition-all duration-300 font-semibold text-sm hover:scale-105 active:scale-95"
-                >
-                  Tutup
-                </button>
+                {/* Action Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                  {hasValidMaps ? (
+                    <a
+                      href={wisata.link_maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-[#2A6218] text-white px-6 py-4 rounded-xl hover:bg-[#3F5231] transition-all duration-300 flex items-center justify-center gap-3 font-semibold hover:scale-105 active:scale-95 shadow-lg"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      Buka di Maps
+                    </a>
+                  ) : (
+                    <button
+                      disabled
+                      className="flex-1 bg-gray-100 text-gray-400 px-6 py-4 rounded-xl cursor-not-allowed flex items-center justify-center gap-3 font-semibold border border-gray-200"
+                    >
+                      <MapPin className="w-5 h-5" />
+                      Maps Segera Tersedia
+                    </button>
+                  )}
+
+                  <button
+                    onClick={() => setShowModal(false)}
+                    className="px-8 py-4 border-2 border-[#65724D] text-[#65724D] rounded-xl hover:bg-[#65724D] hover:text-white transition-all duration-300 font-semibold hover:scale-105 active:scale-95"
+                  >
+                    Tutup
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Full Screen Gallery Modal - Improved */}
+      {/* Full Screen Gallery Modal - Tetap sama */}
       {showGallery && hasGallery && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-95 backdrop-blur-sm flex items-center justify-center p-4 z-[60] transition-opacity duration-300"
+          className="fixed inset-0 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 z-[60] transition-opacity duration-300"
           onClick={() => setShowGallery(false)}
         >
           <div className="relative w-full h-full max-w-6xl max-h-full flex items-center justify-center">
             {/* Close button */}
             <button
               onClick={() => setShowGallery(false)}
-              className="absolute top-4 right-4 z-10 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-3 rounded-full transition-all hover:scale-110 shadow-lg"
+              className="absolute top-4 right-4 z-10 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all hover:scale-110 shadow-lg"
             >
               <X className="w-8 h-8" />
             </button>
@@ -413,13 +410,13 @@ const WisataCard = ({ wisata = {} }) => {
                 <>
                   <button
                     onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-3 rounded-full transition-all hover:scale-110 shadow-lg"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all hover:scale-110 shadow-lg"
                   >
                     <ChevronLeft className="w-8 h-8" />
                   </button>
                   <button
                     onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black bg-opacity-60 hover:bg-opacity-80 text-white p-3 rounded-full transition-all hover:scale-110 shadow-lg"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-3 rounded-full transition-all hover:scale-105 shadow-lg"
                   >
                     <ChevronRight className="w-8 h-8" />
                   </button>
@@ -427,7 +424,7 @@ const WisataCard = ({ wisata = {} }) => {
               )}
 
               {/* Image info */}
-              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black bg-opacity-70 text-white px-6 py-3 rounded-full max-w-md text-center shadow-lg">
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/70 text-white px-6 py-3 rounded-full max-w-md text-center shadow-lg">
                 <span className="font-medium text-base truncate block">
                   {wisata.nama_wisata}
                 </span>
@@ -441,7 +438,7 @@ const WisataCard = ({ wisata = {} }) => {
 
             {/* Thumbnail navigation - only show on larger screens */}
             {wisata.gallery.length > 1 && (
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden sm:flex gap-2 bg-black bg-opacity-60 p-3 rounded-lg max-w-full overflow-x-auto shadow-lg">
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden sm:flex gap-2 bg-black/60 p-3 rounded-lg max-w-full overflow-x-auto shadow-lg">
                 {wisata.gallery.map((image, index) => (
                   <button
                     key={index}

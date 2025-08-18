@@ -359,16 +359,13 @@ const Sejarah = () => {
                         <div className="w-16 h-16 bg-[#65724D]/10 rounded-full flex items-center justify-center mx-auto">
                           <Users className="w-8 h-8 text-[#65724D]" />
                         </div>
-                        <p className="text-[#65724D] font-medium">
-                          Gambar Budaya Kopi dan Teh
-                        </p>
-                        <p className="text-[#65724D]/60 text-sm">
-                          Placeholder untuk gambar tradisi
-                        </p>
+                        <img
+                          className="text-[#65724D] font-medium"
+                          src={
+                            "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755336490/Kopi_qwvawz.webp"
+                          }
+                        ></img>
                       </div>
-                    </div>
-                    <div className="absolute top-6 left-6 bg-[#65724D] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Tradisi Lokal
                     </div>
                   </div>
                 </div>

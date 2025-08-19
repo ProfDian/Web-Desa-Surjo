@@ -11,12 +11,8 @@
         "url": "https://github.com/johndoe"
       },
       {
-        "platform": "linkedin",
-        "url": "https://linkedin.com/in/johndoe"
-      },
-      {
         "platform": "instagram",
-        "url": "https://instagram.com/johndoe"
+        "url": "https://instagram.com/sajid_nouval"
       }
     ],
     "foto": "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755452823/Sajid_Nouval_Informatika_24060122140110_dxohi9.webp"
@@ -29,16 +25,12 @@
     "jobdesk": "Frontend Developer",
     "socialLinks": [
       {
-        "platform": "instagram",
+        "platform": "github",
         "url": "https://instagram.com/janesmith"
       },
       {
         "platform": "instagram",
-        "url": "https://instagram.com/johndoe"
-      },
-      {
-        "platform": "linkedin",
-        "url": "https://linkedin.com/in/janesmith"
+        "url": "https://instagram.com/fth_ra"
       }
     ],
     "foto": "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755454326/Abdul_Fattah_Rahmadiansyah_Tekkom_22_1_rz2try.png"
@@ -55,8 +47,8 @@
         "url": "https://github.com/mikejohnson"
       },
       {
-        "platform": "linkedin",
-        "url": "https://linkedin.com/in/mikejohnson"
+        "platform": "instagram",
+        "url": "https://instagram.com/khairunnisa.kai"
       }
     ],
     "foto": "https://res.cloudinary.com/dovmzvx6b/image/upload/v1755452822/Khairun_Nisa_Teknik_Komputer_22_1_dsnxif.webp"

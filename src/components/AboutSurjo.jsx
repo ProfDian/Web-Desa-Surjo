@@ -11,25 +11,78 @@ const AboutSurjo = () => {
   return (
     <section
       id="tentang"
-      className="relative w-full min-h-screen overflow-hidden"
+      className="relative w-full z-20"
+      style={{
+        minHeight: "100vh",
+        height: "auto",
+      }}
     >
-      <div className="w-full h-screen">
+      {/* Custom CSS for parallax background - zoom safe */}
+      <style jsx>{`
+        .parallax-bg {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 130%; /* Key: Extra width for parallax movement */
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        .mySwiper {
+          width: 100%;
+          min-height: 100vh;
+          height: auto;
+          background: #000;
+        }
+
+        .swiper-slide {
+          box-sizing: border-box;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Zoom-safe navigation and pagination */
+        .mySwiper .swiper-button-next,
+        .mySwiper .swiper-button-prev {
+          --swiper-navigation-size: 40px;
+        }
+
+        .mySwiper .swiper-pagination-bullet {
+          --swiper-pagination-bullet-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+          .parallax-bg {
+            width: 120%; /* Reduce parallax width on mobile for better performance */
+          }
+        }
+      `}</style>
+
+      <div
+        className="w-full relative"
+        style={{
+          minHeight: "100vh",
+          height: "auto",
+        }}
+      >
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
-            "--swiper-navigation-size": "clamp(20px, 4vw, 44px)",
-            "--swiper-pagination-bullet-size": "clamp(8px, 2vw, 15px)",
           }}
           speed={600}
-          parallax={true}
+          parallax={true} // ENABLED: For background movement
           pagination={{
             clickable: true,
             dynamicBullets: true,
           }}
           navigation={true}
           modules={[Parallax, Pagination, Navigation]}
-          className="w-full h-full"
+          className="mySwiper"
           breakpoints={{
             320: {
               spaceBetween: 10,
@@ -42,56 +95,52 @@ const AboutSurjo = () => {
             },
           }}
         >
-          {/* Parallax Background */}
+          {/* Parallax Background - Following Swiper.js Official Pattern */}
           <div
             slot="container-start"
-            className="absolute left-0 top-0 w-full h-full bg-cover bg-center"
+            className="parallax-bg"
             style={{
               backgroundImage:
                 "url(https://res.cloudinary.com/dovmzvx6b/image/upload/v1755427626/Pemandangan_odc3rp.jpg)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              width: "150%",
-              transform: "translateX(-25%)",
             }}
-            data-swiper-parallax="-23%"
+            data-swiper-parallax="-23%" // Key: Background parallax movement
           >
-            {/* Overlay untuk membuat teks lebih readable */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            {/* Stable overlay - not affected by parallax */}
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
           </div>
 
           {/* Main Content Slide */}
           <SwiperSlide>
-            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center py-8 sm:py-12 md:py-16">
-              <div className="w-full max-w-[100vw] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-                {/* Title */}
+            <div className="relative z-30 w-full flex flex-col justify-center items-center px-4 py-8">
+              <div className="w-full max-w-6xl mx-auto">
+                {/* Title - Reduced parallax for zoom safety */}
                 <div
-                  className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
-                  data-swiper-parallax="-300"
+                  className="text-center mb-8"
+                  data-swiper-parallax="-200" // Reduced from -300
                 >
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 tracking-tight leading-tight">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
                     Tentang Desa Surjo
                   </h2>
-                  <div className="w-16 sm:w-20 md:w-24 lg:w-32 xl:w-40 h-0.5 sm:h-0.5 md:h-1 bg-gradient-to-r from-[#2A6218] to-[#4A7C59] mx-auto rounded-full"></div>
+                  <div className="w-32 lg:w-40 h-1 bg-gradient-to-r from-[#2A6218] to-[#4A7C59] mx-auto rounded-full"></div>
                 </div>
 
                 {/* Subtitle */}
                 <div
-                  className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
-                  data-swiper-parallax="-200"
+                  className="text-center mb-8"
+                  data-swiper-parallax="-150" // Reduced from -200
                 >
-                  <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl text-white/90 font-light leading-relaxed px-4 sm:px-6">
+                  <h3 className="text-xl md:text-2xl lg:text-3xl text-white/90 font-light leading-relaxed px-6">
                     Permata Tersembunyi di Lereng Pegunungan Dieng
                   </h3>
                 </div>
 
                 {/* Main Description */}
                 <div
-                  className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
-                  data-swiper-parallax="-100"
+                  className="text-center mb-8 px-4"
+                  data-swiper-parallax="-100" // Reduced from -100
                 >
-                  <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border border-white/20 max-w-7xl mx-auto">
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-white leading-relaxed font-light">
+                  <div className="bg-white/15 backdrop-blur-md rounded-2xl p-8 lg:p-12 border border-white/20 max-w-5xl mx-auto">
+                    <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
                       Desa Surjo merupakan{" "}
                       <span className="font-semibold text-[#4A7C59]">
                         permata tersembunyi
@@ -111,44 +160,44 @@ const AboutSurjo = () => {
                   </div>
                 </div>
 
-                {/* Features Grid */}
+                {/* Features Grid - Minimal parallax */}
                 <div
-                  className="w-full max-w-6xl mx-auto"
+                  className="w-full max-w-4xl mx-auto px-4"
                   data-swiper-parallax="-50"
                 >
-                  <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
-                    <div className="bg-gradient-to-br from-[#2A6218]/20 to-[#4A7C59]/20 backdrop-blur-sm rounded-lg md:rounded-xl p-4 sm:p-5 md:p-6 text-center border border-white/20">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-5">
-                        <Coffee className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="bg-gradient-to-br from-[#2A6218]/25 to-[#4A7C59]/25 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Coffee className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white mb-2 sm:mb-3">
+                      <h4 className="font-semibold text-lg text-white mb-3">
                         Kopi Premium
                       </h4>
-                      <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
+                      <p className="text-white/80 text-base leading-relaxed">
                         Berkualitas tinggi dari ketinggian pegunungan
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-[#2A6218]/20 to-[#4A7C59]/20 backdrop-blur-sm rounded-lg md:rounded-xl p-4 sm:p-5 md:p-6 text-center border border-white/20">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-5">
-                        <Leaf className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
+                    <div className="bg-gradient-to-br from-[#2A6218]/25 to-[#4A7C59]/25 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Leaf className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white mb-2 sm:mb-3">
+                      <h4 className="font-semibold text-lg text-white mb-3">
                         Teh Aromatis
                       </h4>
-                      <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
+                      <p className="text-white/80 text-base leading-relaxed">
                         Pegunungan dengan aroma yang memukau
                       </p>
                     </div>
 
-                    <div className="bg-gradient-to-br from-[#2A6218]/20 to-[#4A7C59]/20 backdrop-blur-sm rounded-lg md:rounded-xl p-4 sm:p-5 md:p-6 text-center border border-white/20 md:col-span-2 lg:col-span-1">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-5">
-                        <Music className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-white" />
+                    <div className="bg-gradient-to-br from-[#2A6218]/25 to-[#4A7C59]/25 backdrop-blur-md rounded-xl p-6 text-center border border-white/20">
+                      <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <Music className="w-8 h-8 text-white" />
                       </div>
-                      <h4 className="font-semibold text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-white mb-2 sm:mb-3">
+                      <h4 className="font-semibold text-lg text-white mb-3">
                         Seni Tradisional
                       </h4>
-                      <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg leading-relaxed">
+                      <p className="text-white/80 text-base leading-relaxed">
                         Kuntulan dan tongprek yang autentik
                       </p>
                     </div>
@@ -160,30 +209,27 @@ const AboutSurjo = () => {
 
           {/* Second Slide - Additional Info */}
           <SwiperSlide>
-            <div className="relative z-10 w-full h-full flex flex-col justify-center items-center py-8 sm:py-12 md:py-16">
-              <div className="w-full max-w-[100vw] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
-                <div
-                  className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
-                  data-swiper-parallax="-300"
-                >
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 lg:mb-8 tracking-tight leading-tight">
+            <div className="relative z-30 w-full flex flex-col justify-center items-center px-4 py-8">
+              <div className="w-full max-w-6xl mx-auto">
+                <div className="text-center mb-8" data-swiper-parallax="-200">
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight">
                     Kekayaan Lokal yang Menawan
                   </h2>
-                  <div className="w-16 sm:w-20 md:w-24 lg:w-32 xl:w-40 h-0.5 sm:h-0.5 md:h-1 bg-gradient-to-r from-[#4A7C59] to-[#2A6218] mx-auto rounded-full"></div>
+                  <div className="w-32 lg:w-40 h-1 bg-gradient-to-r from-[#4A7C59] to-[#2A6218] mx-auto rounded-full"></div>
                 </div>
 
                 <div
-                  className="text-center max-w-5xl mx-auto"
-                  data-swiper-parallax="-200"
+                  className="text-center max-w-4xl mx-auto px-4"
+                  data-swiper-parallax="-150"
                 >
-                  <div className="bg-gradient-to-br from-[#2A6218]/20 via-[#3F5231]/20 to-[#4A7C59]/20 backdrop-blur-sm rounded-lg sm:rounded-xl md:rounded-2xl lg:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 border border-white/20">
-                    <div className="flex items-center justify-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">
-                      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 bg-white/20 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                        <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 text-white" />
+                  <div className="bg-gradient-to-br from-[#2A6218]/20 via-[#3F5231]/20 to-[#4A7C59]/20 backdrop-blur-md rounded-2xl p-8 lg:p-12 border border-white/20">
+                    <div className="flex items-center justify-center mb-8">
+                      <div className="w-20 h-20 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+                        <Sparkles className="w-10 h-10 text-white" />
                       </div>
                     </div>
 
-                    <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-white leading-relaxed font-light">
+                    <p className="text-lg md:text-xl lg:text-2xl text-white leading-relaxed font-light">
                       Kini, Desa Surjo mulai membuka diri sebagai{" "}
                       <span className="font-semibold text-[#4A7C59]">
                         desa wisata

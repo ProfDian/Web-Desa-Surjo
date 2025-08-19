@@ -10,7 +10,7 @@ import AnimatedSection from "../Animations/AnimatedSection";
 const HomePage = () => {
   return (
     <motion.div
-      className="min-h-screen w-full bg-[#F7F4ED]" // REMOVED overflow-x-hidden
+      className="min-h-screen w-full bg-[#F7F4ED]"
       initial={{ opacity: 0, y: 50, scale: 0.98 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       exit={{ opacity: 0, y: -0, scale: 0.98 }}
@@ -19,22 +19,23 @@ const HomePage = () => {
         ease: [0.4, 0.0, 0.2, 1],
       }}
     >
-      <Header />
+      {/* Header - Highest Z-index */}
+      <div className="relative z-50">
+        <Header />
+      </div>
 
-      {/* Hero Section */}
+      {/* Hero Section - High Z-index */}
       <AnimatedSection animationType="fadeInUp">
-        <div className="w-full">
+        <div className="relative z-30 w-full">
           <Hero />
         </div>
       </AnimatedSection>
 
-      {/* About Desa Surjo Section - NO WRAPPER */}
-      <div className="w-full relative">
-        <AboutSurjo />
-      </div>
+      {/* About Desa Surjo Section - Medium Z-index, NO WRAPPER */}
+      <AboutSurjo />
 
-      {/* Separator between About and Main Content */}
-      <div className="relative w-full">
+      {/* Separator between About and Main Content - Low Z-index */}
+      <div className="relative w-full z-10">
         <svg
           className="w-full h-8 sm:h-12 md:h-16 text-[#F7F4ED] rotate-180"
           viewBox="0 0 1200 120"
@@ -49,8 +50,8 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#F7F4ED] via-transparent to-transparent h-20 bottom-0"></div>
       </div>
 
-      {/* Main Section - Visi Misi */}
-      <main className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-[#F7F4ED] overflow-x-hidden">
+      {/* Main Section - Visi Misi - Medium Z-index */}
+      <main className="relative z-20 w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-[#F7F4ED] overflow-x-hidden">
         <div className="w-full max-w-none sm:max-w-xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
           {/* Visi, Misi, Tujuan, Sasaran */}
           <AnimatedSection animationType="fadeInUp">
@@ -214,7 +215,10 @@ const HomePage = () => {
         </div>
       </main>
 
-      <Footer />
+      {/* Footer - Low Z-index */}
+      <div className="relative z-10">
+        <Footer />
+      </div>
     </motion.div>
   );
 };

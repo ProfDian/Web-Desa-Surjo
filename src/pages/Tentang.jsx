@@ -13,7 +13,7 @@ import {
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import AnimatedSection from "../Animations/AnimatedSection";
-import Hero from "../components/Hero";
+import Hero, { wisataSlides } from "../components/Hero";
 
 // Enhanced Developer Card Component
 const DeveloperCard = ({ developer }) => {
@@ -227,7 +227,17 @@ const Tentang = () => {
       <Header />
 
       <AnimatedSection>
-        <Hero />
+        <Hero
+          mainTitle="Tim Pengembang"
+          highlightTitle="Desa Surjo"
+          staticDescription="Rencana Wisata yang akan segera hadir di Desa Surjo."
+          slides={wisataSlides}
+          primaryCTA={{ text: "Lihat Rencana Wisata Desa Surjo", href: "" }}
+          secondaryCTA={{ text: "", href: "" }}
+          announcement={{
+            text: "Cerita Kita",
+          }}
+        />
       </AnimatedSection>
 
       {/* Our Team Section */}
